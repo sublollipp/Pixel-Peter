@@ -11,11 +11,15 @@ const jumpChargeSpeed: int = 360
 
 const maxJumpPower: int = 600
 
+const directionChangeSpeed = 10
+
+var chargedDirectionPower: float = 0
+
 # Holder styr på, hvad spillerens hastighed var i sidste frame
 var previousVelocity: Vector2 = Vector2.ZERO
 
 # -1 er venstre- +1 er højre
-var direction: int = 0
+var direction: float = 0
 
 # Den opladte kraft i hoppet - stiger, når man holder hop-knappen inde
 var chargedJumpPower: float = 0
@@ -26,6 +30,10 @@ var charging: bool = false
 func _process(delta: float) -> void:
 	if charging: # Kører, hvis man er på jorden, og hop-knappen er holdt nede
 		print(chargedJumpPower) # Debug statement
+		
+		chargedDirectionPower += Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed;
+		
+		# Øger jump poweren, indtil man har nået max niveau
 		if chargedJumpPower < maxJumpPower:
 			chargedJumpPower += jumpChargeSpeed * delta
 		elif chargedJumpPower > maxJumpPower:
@@ -36,18 +44,20 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
 	
+	#Bouncer, når spilleren er på væggen
 	if is_on_wall():
 		velocity.x = previousVelocity.x * -bounceRetention
 	
+	#Sørger for, at spilleren står stille, når den er på gulvet. Altså nul sliding osv.
 	if is_on_floor():
 		velocity = Vector2.ZERO
 	
+	#Opdaterer previousVelocity
 	previousVelocity = velocity
 
 func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker noget som helst med inputsne
-	if is_on_floor():
+	if is_on_floor(): # Hvis man er i luften, skal man være ude af kontrol. Hermed kører input-koden kun, når man er på jorden
 		if event.is_action_pressed("HØJRE"):
-			direction = 1
 			$Sprite2D.flip_h = true
 			print("HØJRE")
 		elif event.is_action_pressed("VENSTRE"):
@@ -63,5 +73,7 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 
 func jump() -> void:
 	velocity.y = -chargedJumpPower
-	velocity.x = chargedJumpPower * direction
+	velocity.x = chargedDirectionPower
+	chargedDirectionPower = 0
+	
 	chargedJumpPower = 0
