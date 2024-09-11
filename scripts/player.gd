@@ -24,8 +24,8 @@ var chargedJumpPower: float = 0
 var charging: bool = false
 
 func _process(delta: float) -> void:
-	if charging:
-		print(chargedJumpPower)
+	if charging: # Kører, hvis man er på jorden, og hop-knappen er holdt nede
+		print(chargedJumpPower) # Debug statement
 		if chargedJumpPower < maxJumpPower:
 			chargedJumpPower += jumpChargeSpeed * delta
 		elif chargedJumpPower > maxJumpPower:
