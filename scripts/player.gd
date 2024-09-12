@@ -15,6 +15,8 @@ const directionChangeSpeed = 10
 
 var chargedDirectionPower: float = 0
 
+var health = 3
+
 # Holder styr på, hvad spillerens hastighed var i sidste frame
 var previousVelocity: Vector2 = Vector2.ZERO
 
@@ -58,18 +60,27 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker noget som helst med inputsne
 	if is_on_floor(): # Hvis man er i luften, skal man være ude af kontrol. Hermed kører input-koden kun, når man er på jorden
 		if event.is_action_pressed("HØJRE"):
-			$Sprite2D.flip_h = true
+			$AnimatedSprite2D.flip_h = true
+	#Opdaterer spriten ift hvor meget liv player har animationerne bliver kaldt bygget på hp
+			
 			print("HØJRE")
 		elif event.is_action_pressed("VENSTRE"):
 			direction = -1
-			$Sprite2D.flip_h = false
+			$AnimatedSprite2D.flip_h = false
 			print("VENSTRE")
 		if event.is_action_pressed("HOP"):
 			chargedJumpPower = startingPower
 			charging = true
+			$AnimatedSprite2D.play("charging"+str(health))
+			
 		elif event.is_action_released("HOP"):
 			charging = false
 			jump()
+			$AnimatedSprite2D.play("idle"+str(health))
+			
+		if event.is_action_pressed("Take_damege"):
+			health -= 1
+			$AnimatedSprite2D.play("idle"+str(health))
 
 func jump() -> void:
 	velocity.y = -chargedJumpPower
