@@ -10,6 +10,7 @@ const startingPower: int = 120
 const jumpChargeSpeed: int = 360
 
 const maxJumpPower: int = 600
+const maxDirectionPower: int = 600
 
 const directionChangeSpeed = 10
 
@@ -32,8 +33,15 @@ var charging: bool = false
 func _process(delta: float) -> void:
 	if charging: # Kører, hvis man er på jorden, og hop-knappen er holdt nede
 		print(chargedJumpPower) # Debug statement
+		print(chargedDirectionPower) # Debug statement
 		
-		chargedDirectionPower += Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed;
+		#øger directionpower intil maxniveau er ramt
+		if chargedDirectionPower < maxDirectionPower and chargedDirectionPower > -maxDirectionPower:
+			chargedDirectionPower += Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed
+		elif chargedDirectionPower > maxDirectionPower :
+			chargedDirectionPower = maxJumpPower
+		elif chargedDirectionPower < -maxDirectionPower :
+			chargedDirectionPower = -maxJumpPower
 		
 		# Øger jump poweren, indtil man har nået max niveau
 		if chargedJumpPower < maxJumpPower:
@@ -85,6 +93,6 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 func jump() -> void:
 	velocity.y = -chargedJumpPower
 	velocity.x = chargedDirectionPower
-	chargedDirectionPower = 0
 	
+	chargedDirectionPower = 0
 	chargedJumpPower = 0
