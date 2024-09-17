@@ -176,6 +176,6 @@ shape = SubResource("CapsuleShape2D_gvcpj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(184, -57)
 sprite_frames = SubResource("SpriteFrames_redn5")
-animation = &"flying1"
+animation = &"idle1"
 autoplay = "idle3"
 offset = Vector2(-184, 55)

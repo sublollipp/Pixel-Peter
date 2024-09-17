@@ -1,15 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckkqgnj0xn5tb"]
+[gd_scene load_steps=7 format=3 uid="uid://ckkqgnj0xn5tb"]
+
+[ext_resource type="Texture2D" uid="uid://dpkjwv4vtdpy0" path="res://assets/Sprites/enemies.png" id="1_uruwg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifvdy"]
+atlas = ExtResource("1_uruwg")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl2tm"]
+atlas = ExtResource("1_uruwg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns8sh"]
+atlas = ExtResource("1_uruwg")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a43ra"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifvdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl2tm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns8sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl2tm")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 6.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yms1s"]
 radius = 7.0
 height = 32.0
 
-[node name="Enemy" type="Sprite2D"]
+[node name="Enemy" type="AnimatedSprite2D"]
 position = Vector2(0, -2)
 scale = Vector2(0.335938, 0.335938)
-hframes = 6
-vframes = 3
-frame = 13
+sprite_frames = SubResource("SpriteFrames_a43ra")
+animation = &"walking"
+autoplay = "walking"
+frame_progress = 0.424255
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

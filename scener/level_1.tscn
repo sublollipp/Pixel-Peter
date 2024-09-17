@@ -18,4 +18,5 @@ zoom = 0.795
 offset = Vector2(-0.375, -101)
 
 [node name="Psykolog" parent="Enemies" index="0" instance=ExtResource("2_tmnrh")]
-position = Vector2(-59, -112)
+position = Vector2(-49, -112)
+frame_progress = 0.141447

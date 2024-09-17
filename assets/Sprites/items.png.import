@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hcy630pb8qf1"
-path="res://.godot/imported/pixelpeter.png-9a9b0d1856e82f49716964b9b95af9fd.ctex"
+uid="uid://bljr7331p4a2m"
+path="res://.godot/imported/items.png-a5ec215939a9f851bdca64e10868503c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/pixelpeter.png"
-dest_files=["res://.godot/imported/pixelpeter.png-9a9b0d1856e82f49716964b9b95af9fd.ctex"]
+source_file="res://assets/Sprites/items.png"
+dest_files=["res://.godot/imported/items.png-a5ec215939a9f851bdca64e10868503c.ctex"]
 
 [params]
 
