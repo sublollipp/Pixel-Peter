@@ -1,0 +1,290 @@
+[gd_scene load_steps=8 format=4 uid="uid://cviksreb41jfp"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ghnms"]
+[ext_resource type="Texture2D" uid="uid://dxdh2585guppm" path="res://assets/free-swamp-game-tileset-pixel-art/2 Background/Background.png" id="1_mwtqk"]
+[ext_resource type="Texture2D" uid="uid://bjtwmgrptjvqd" path="res://assets/Tilemap/Tileset.png" id="2_42vrf"]
+[ext_resource type="FontFile" uid="uid://bsghkecgtq7tr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_egpb6"]
+[ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="4_iw6d3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ss8l"]
+texture = ExtResource("2_42vrf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4f3yy"]
+sources/0 = SubResource("TileSetAtlasSource_7ss8l")
+
+[node name="Main_Menu" type="Node2D"]
+script = ExtResource("1_ghnms")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(323, 182)
+scale = Vector2(1.12346, 1.12346)
+texture = ExtResource("1_mwtqk")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(323, 182)
+scale = Vector2(1.12346, 1.12346)
+tile_map_data = PackedByteArray("AAD6/wUAAAAAAAAAAAD7/wUAAAABAAAAAAD8/wUAAAACAAAAAAD9/wUAAAADAAAAAAD+/wUAAAABAAAAAAD//wUAAAABAAAAAAAAAAUAAAACAAAAAAABAAUAAAADAAAAAAACAAUAAAAEAAAAAAADAAUAAAABAAAAAAAEAAUAAAACAAAAAAAFAAUAAAAFAAAAAAD6/wYAAAAAAAEAAAD6/wcAAAAAAAUAAAD7/wYAAAABAAEAAAD7/wcAAAABAAUAAAD8/wYAAAACAAEAAAD8/wcAAAACAAUAAAD9/wYAAAADAAEAAAD9/wcAAAADAAUAAAD+/wYAAAAEAAEAAAD+/wcAAAAEAAUAAAD//wYAAAACAAIAAAD//wcAAAACAAUAAAAAAAYAAAACAAIAAAAAAAcAAAADAAUAAAABAAYAAAAEAAEAADABAAcAAAABAAUAAAACAAYAAAADAAEAADACAAcAAAACAAUAAAADAAYAAAACAAEAADADAAcAAAADAAUAAAAEAAYAAAABAAEAADAEAAcAAAAEAAUAAAAFAAYAAAAAAAEAADAFAAcAAAAFAAUAAAD6/wEAAAAAAAAAAAD7/wEAAAABAAAAAAD8/wEAAAACAAAAAAD9/wEAAAADAAAAAAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAAAAAEAAAACAAAAAAABAAEAAAADAAAAAAACAAEAAAAEAAAAAAADAAEAAAABAAAAAAAEAAEAAAACAAAAAAAFAAEAAAAFAAAAAAD6/wIAAAAAAAEAAAD6/wMAAAAAAAUAAAD7/wIAAAABAAEAAAD7/wMAAAABAAUAAAD8/wIAAAACAAEAAAD8/wMAAAACAAUAAAD9/wIAAAADAAEAAAD9/wMAAAADAAUAAAD+/wIAAAAEAAEAAAD+/wMAAAAEAAUAAAD//wIAAAACAAIAAAD//wMAAAACAAUAAAAAAAIAAAACAAIAAAAAAAMAAAADAAUAAAABAAIAAAAEAAEAADABAAMAAAABAAUAAAACAAIAAAADAAEAADACAAMAAAACAAUAAAADAAIAAAACAAEAADADAAMAAAADAAUAAAAEAAIAAAABAAEAADAEAAMAAAAEAAUAAAAFAAIAAAAAAAEAADAFAAMAAAAFAAUAAAD6//3/AAAAAAAAAAD7//3/AAABAAAAAAD8//3/AAACAAAAAAD9//3/AAADAAAAAAD+//3/AAABAAAAAAD///3/AAABAAAAAAAAAP3/AAACAAAAAAABAP3/AAADAAAAAAACAP3/AAAEAAAAAAADAP3/AAABAAAAAAAEAP3/AAACAAAAAAAFAP3/AAAFAAAAAAD6//7/AAAAAAEAAAD6////AAAAAAUAAAD7//7/AAABAAEAAAD7////AAABAAUAAAD8//7/AAACAAEAAAD8////AAACAAUAAAD9//7/AAADAAEAAAD9////AAADAAUAAAD+//7/AAAEAAEAAAD+////AAAEAAUAAAD///7/AAACAAIAAAD/////AAACAAUAAAAAAP7/AAACAAIAAAAAAP//AAADAAUAAAABAP7/AAAEAAEAADABAP//AAABAAUAAAACAP7/AAADAAEAADACAP//AAACAAUAAAADAP7/AAACAAEAADADAP//AAADAAUAAAAEAP7/AAABAAEAADAEAP//AAAEAAUAAAAFAP7/AAAAAAEAADAFAP//AAAFAAUAAAA=")
+tile_set = SubResource("TileSet_4f3yy")
+
+[node name="MainMenuLabel" type="Label" parent="."]
+offset_left = 188.0
+offset_top = 60.0
+offset_right = 460.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("3_egpb6")
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="StartGameButton" type="Button" parent="Buttons"]
+offset_left = 216.0
+offset_top = 128.0
+offset_right = 431.0
+offset_bottom = 182.0
+theme_override_fonts/font = ExtResource("4_iw6d3")
+text = "Start Game"
+
+[node name="SettingsButton" type="Button" parent="Buttons"]
+offset_left = 216.0
+offset_top = 200.0
+offset_right = 431.0
+offset_bottom = 254.0
+theme_override_fonts/font = ExtResource("4_iw6d3")
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="Buttons"]
+offset_left = 216.0
+offset_top = 272.0
+offset_right = 431.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("4_iw6d3")
+text = "Exit"
+
+[connection signal="button_up" from="Buttons/StartGameButton" to="." method="_on_start_game_button_button_up"]
+[connection signal="button_up" from="Buttons/SettingsButton" to="." method="_on_settings_button_button_up"]
+[connection signal="button_up" from="Buttons/ExitButton" to="." method="_on_exit_button_button_up"]

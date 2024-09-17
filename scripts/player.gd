@@ -65,12 +65,15 @@ func _physics_process(delta: float) -> void:
 	#Sørger for, at spilleren står stille, når den er på gulvet. Altså nul sliding osv.
 	if is_on_floor():
 		velocity = Vector2.ZERO
-	
+	if is_on_floor() and $AnimatedSprite2D.animation == "flying"+str(health):
+		$AnimatedSprite2D.play("idle"+str(health))
+		
 	#Opdaterer previousVelocity
 	previousVelocity = velocity
 
 func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker noget som helst med inputsne
 	if is_on_floor(): # Hvis man er i luften, skal man være ude af kontrol. Hermed kører input-koden kun, når man er på jorden
+		$AnimatedSprite2D.play("idle"+str(health))
 		if event.is_action_pressed("HØJRE"):
 			$AnimatedSprite2D.flip_h = true
 	#Opdaterer spriten ift hvor meget liv player har animationerne bliver kaldt bygget på hp
@@ -81,16 +84,21 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 		if event.is_action_pressed("HOP"):
 			chargedJumpPower = startingPower
 			charging = true
+			
 			$AnimatedSprite2D.play("charging"+str(health))
 			
 		elif event.is_action_released("HOP"):
 			charging = false
 			jump()
-			$AnimatedSprite2D.play("idle"+str(health))
+			$AnimatedSprite2D.play("flying"+str(health))
+			
 			
 		if event.is_action_pressed("Take_damege"):
 			health -= 1
 			$AnimatedSprite2D.play("idle"+str(health))
+	else:
+		pass
+		#$AnimatedSprite2D.play("flying"+str(health))
 
 func jump() -> void:
 	velocity.y = -chargedJumpPower
