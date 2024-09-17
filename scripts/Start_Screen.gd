@@ -27,7 +27,7 @@ func _process(delta):
 	
 func _input(event):
 	if (event is InputEventKey and event.is_pressed()) or event.is_action_pressed("MousePressed"):
-		get_tree().change_scene_to_file("res://scener/spil.tscn")
+		get_tree().change_scene_to_file("res://scener/main_menu.tscn")
 
 	
 
