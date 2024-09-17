@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqddhulnmyq1g"]
 
 [ext_resource type="PackedScene" uid="uid://ckkqgnj0xn5tb" path="res://scener/enemy.tscn" id="1_7jbb4"]
-[ext_resource type="Texture2D" uid="uid://cylxfx3nsara1" path="res://assets/Sprites/pixelpeter.png" id="2_mdnrh"]
+[ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="2_mdnrh"]
 [ext_resource type="Script" path="res://scripts/psykolog.gd" id="3_jcj8i"]
 
 [node name="Psykolog" instance=ExtResource("1_7jbb4")]
