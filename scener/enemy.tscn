@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckkqgnj0xn5tb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yms1s"]
+radius = 7.0
+height = 32.0
+
+[node name="Enemy" type="Sprite2D"]
+position = Vector2(0, -2)
+scale = Vector2(0.335938, 0.335938)
+hframes = 6
+vframes = 3
+frame = 13
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_yms1s")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqddhulnmyq1g"]
+
+[ext_resource type="PackedScene" uid="uid://ckkqgnj0xn5tb" path="res://scener/enemy.tscn" id="1_7jbb4"]
+[ext_resource type="Texture2D" uid="uid://cylxfx3nsara1" path="res://assets/Sprites/pixelpeter.png" id="2_mdnrh"]
+[ext_resource type="Script" path="res://scripts/psykolog.gd" id="3_jcj8i"]
+
+[node name="Psykolog" instance=ExtResource("1_7jbb4")]
+scale = Vector2(1, 1)
+texture = ExtResource("2_mdnrh")
+script = ExtResource("3_jcj8i")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(1, 0)
+
+[node name="DiagonalRaycast" type="RayCast2D" parent="." index="1"]
+target_position = Vector2(-6, 17)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="StraightRaycast" type="RayCast2D" parent="." index="2"]
+target_position = Vector2(-9, 0)
+collision_mask = 4
