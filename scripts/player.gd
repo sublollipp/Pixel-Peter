@@ -34,8 +34,6 @@ var charging: bool = false
 
 func _process(delta: float) -> void:
 	if charging: # Kører, hvis man er på jorden, og hop-knappen er holdt nede
-		print(chargedJumpPower) # Debug statement
-		print(chargedDirectionPower) # Debug statement
 		
 		#øger directionpower intil maxniveau er ramt
 		chargedDirectionPower = clamp(chargedDirectionPower + Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed, -maxDirectionPower, maxDirectionPower)
@@ -77,11 +75,9 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 			$AnimatedSprite2D.flip_h = true
 	#Opdaterer spriten ift hvor meget liv player har animationerne bliver kaldt bygget på hp
 			
-			print("HØJRE")
 		elif event.is_action_pressed("VENSTRE"):
 			direction = -1
 			$AnimatedSprite2D.flip_h = false
-			print("VENSTRE")
 		if event.is_action_pressed("HOP"):
 			chargedJumpPower = startingPower
 			charging = true

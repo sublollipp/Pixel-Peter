@@ -421,7 +421,7 @@ texture = ExtResource("3_y1hn0")
 19:11/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_n0djv"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_klqiu")
 
 [node name="Level" type="Node2D"]
@@ -439,3 +439,5 @@ offset_top = -360.0
 offset_right = 640.0
 offset_bottom = 360.0
 script = ExtResource("3_r5omq")
+
+[node name="Enemies" type="Node" parent="."]
