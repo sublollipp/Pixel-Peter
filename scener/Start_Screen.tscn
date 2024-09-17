@@ -1,0 +1,457 @@
+[gd_scene load_steps=30 format=4 uid="uid://c4gllaejb40qj"]
+
+[ext_resource type="Script" path="res://scripts/Start_Screen.gd" id="1_odutl"]
+[ext_resource type="Texture2D" uid="uid://dxdh2585guppm" path="res://assets/free-swamp-game-tileset-pixel-art/2 Background/Background.png" id="2_vhu4j"]
+[ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="3_kw404"]
+[ext_resource type="Texture2D" uid="uid://bjtwmgrptjvqd" path="res://assets/Tilemap/Tileset.png" id="4_jptxp"]
+[ext_resource type="FontFile" uid="uid://bsghkecgtq7tr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_uw5kh"]
+[ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="6_lp8ad"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg2kw"]
+atlas = ExtResource("3_kw404")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iolb3"]
+atlas = ExtResource("3_kw404")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxb1l"]
+atlas = ExtResource("3_kw404")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y0xi"]
+atlas = ExtResource("3_kw404")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp3sm"]
+atlas = ExtResource("3_kw404")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u1b2"]
+atlas = ExtResource("3_kw404")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c2ji"]
+atlas = ExtResource("3_kw404")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd1kr"]
+atlas = ExtResource("3_kw404")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu4ov"]
+atlas = ExtResource("3_kw404")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sl7b"]
+atlas = ExtResource("3_kw404")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bsko"]
+atlas = ExtResource("3_kw404")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttb0b"]
+atlas = ExtResource("3_kw404")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0nes"]
+atlas = ExtResource("3_kw404")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km4tg"]
+atlas = ExtResource("3_kw404")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01quw"]
+atlas = ExtResource("3_kw404")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqr2o"]
+atlas = ExtResource("3_kw404")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnibt"]
+atlas = ExtResource("3_kw404")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5lvd"]
+atlas = ExtResource("3_kw404")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igsoo"]
+atlas = ExtResource("3_kw404")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgn6p"]
+atlas = ExtResource("3_kw404")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0l54"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg2kw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iolb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxb1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y0xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp3sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0u1b2")
+}],
+"loop": true,
+"name": &"PixelP1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c2ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd1kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu4ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sl7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bsko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttb0b")
+}],
+"loop": true,
+"name": &"PixelP2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0nes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km4tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01quw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqr2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnibt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5lvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igsoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgn6p")
+}],
+"loop": true,
+"name": &"PixelP3",
+"speed": 6.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ym54"]
+texture = ExtResource("4_jptxp")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hpctd"]
+sources/0 = SubResource("TileSetAtlasSource_4ym54")
+
+[node name="Start_Screen" type="Node2D"]
+script = ExtResource("1_odutl")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(327.111, 186)
+scale = Vector2(1.1358, 1.1358)
+texture = ExtResource("2_vhu4j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(322, 159)
+scale = Vector2(2.0625, 2.09375)
+sprite_frames = SubResource("SpriteFrames_a0l54")
+animation = &"PixelP1"
+autoplay = "PixelP1"
+frame_progress = 0.51406
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAAkAAAAAAAAAAAADAAoAAAAAAAEAAAADAAsAAAAAAAEAAAADAAwAAAAFAAEAADADAA0AAAAFAAAAADAEAAkAAAABAAAAAAAEAAoAAAABAAEAAAAEAAsAAAABAAEAAAAEAAwAAAAEAAEAADAEAA0AAAAEAAAAADAFAAkAAAACAAAAAAAFAAoAAAACAAEAAAAFAAsAAAACAAEAAAAFAAwAAAADAAEAADAFAA0AAAADAAAAADAGAAkAAAADAAAAAAAGAAoAAAADAAEAAAAGAAsAAAADAAEAAAAGAAwAAAACAAEAADAGAA0AAAACAAAAADAHAAkAAAABAAAAAAAHAAoAAAABAAEAAAAHAAsAAAAEAAEAAAAHAAwAAAABAAEAADAHAA0AAAABAAAAADAIAAkAAAABAAAAAAAIAAoAAAABAAEAAAAIAAsAAAACAAIAAAAIAAwAAAABAAEAAAAIAA0AAAABAAAAADAJAAkAAAACAAAAAAAJAAoAAAACAAEAAAAJAAsAAAACAAIAAAAJAAwAAAADAAEAADAJAA0AAAADAAAAADAKAAkAAAADAAAAAAAKAAoAAAADAAEAAAAKAAsAAAAEAAEAADAKAAwAAAACAAEAADAKAA0AAAACAAAAADALAAkAAAAEAAAAAAALAAoAAAAEAAEAAAALAAsAAAADAAEAADALAAwAAAABAAEAADALAA0AAAABAAAAADAMAAkAAAABAAAAAAAMAAoAAAABAAEAAAAMAAsAAAACAAEAADAMAAwAAAACAAEAADAMAA0AAAACAAAAADANAAkAAAACAAAAAAANAAoAAAACAAEAAAANAAsAAAABAAEAADANAAwAAAABAAEAADANAA0AAAABAAAAADAOAAkAAAAFAAAAAAAOAAoAAAAFAAEAAAAOAAsAAAAAAAEAADAOAAwAAAAIAAMAAAAOAA0AAAAIAAMAADAOAA4AAAAAAAEAAAAOAA8AAAAFAAEAADAOABAAAAAFAAAAADAPAAwAAAABAAAAAAAPAA0AAAABAAEAAAAPAA4AAAABAAEAAAAPAA8AAAAEAAEAADAPABAAAAAEAAAAADAQAAwAAAACAAAAAAAQAA0AAAACAAEAAAAQAA4AAAACAAEAAAAQAA8AAAADAAEAADAQABAAAAADAAAAADARAAwAAAADAAAAAAARAA0AAAADAAEAAAARAA4AAAADAAEAAAARAA8AAAACAAEAADARABAAAAACAAAAADASAAwAAAABAAAAAAASAA0AAAABAAEAAAASAA4AAAAEAAEAAAASAA8AAAABAAEAADASABAAAAABAAAAADATAAwAAAABAAAAAAATAA0AAAABAAEAAAATAA4AAAACAAIAAAATAA8AAAABAAEAAAATABAAAAABAAAAADAUAAwAAAACAAAAAAAUAA0AAAACAAEAAAAUAA4AAAACAAIAAAAUAA8AAAADAAEAADAUABAAAAADAAAAADAVAAwAAAADAAAAAAAVAA0AAAADAAEAAAAVAA4AAAAEAAEAADAVAA8AAAACAAEAADAVABAAAAACAAAAADAWAAwAAAAEAAAAAAAWAA0AAAAEAAEAAAAWAA4AAAADAAEAADAWAA8AAAABAAEAADAWABAAAAABAAAAADAXAAwAAAABAAAAAAAXAA0AAAABAAEAAAAXAA4AAAACAAEAADAXAA8AAAACAAEAADAXABAAAAACAAAAADAYAAwAAAACAAAAAAAYAA0AAAACAAEAAAAYAA4AAAABAAEAADAYAA8AAAABAAEAADAYABAAAAABAAAAADAZAAwAAAAFAAAAAAAZAA0AAAAFAAEAAAAZAA4AAAAAAAEAADAZAA8AAAAAAAEAADAZABAAAAAAAAAAADATAAIAAAABAAAAAAATAAMAAAABAAEAAAATAAQAAAABAAEAAAATAAUAAAAEAAEAADATAAYAAAAEAAAAADAUAAIAAAACAAAAAAAUAAMAAAACAAEAAAAUAAQAAAACAAEAAAAUAAUAAAADAAEAADAUAAYAAAADAAAAADAVAAIAAAADAAAAAAAVAAMAAAADAAEAAAAVAAQAAAADAAEAAAAVAAUAAAACAAEAADAVAAYAAAACAAAAADAWAAIAAAABAAAAAAAWAAMAAAABAAEAAAAWAAQAAAAEAAEAAAAWAAUAAAABAAEAADAWAAYAAAABAAAAADAXAAIAAAABAAAAAAAXAAMAAAABAAEAAAAXAAQAAAACAAIAAAAXAAUAAAABAAEAAAAXAAYAAAABAAAAADAYAAIAAAACAAAAAAAYAAMAAAACAAEAAAAYAAQAAAACAAIAAAAYAAUAAAADAAEAADAYAAYAAAADAAAAADAZAAIAAAADAAAAAAAZAAMAAAADAAEAAAAZAAQAAAAEAAEAADAZAAUAAAACAAEAADAZAAYAAAACAAAAADAaAAIAAAAEAAAAAAAaAAMAAAAEAAEAAAAaAAQAAAADAAEAADAaAAUAAAABAAEAADAaAAYAAAABAAAAADAbAAIAAAABAAAAAAAbAAMAAAABAAEAAAAbAAQAAAACAAEAADAbAAUAAAACAAEAADAbAAYAAAACAAAAADAcAAIAAAABAAAAAAAcAAMAAAABAAEAAAAcAAQAAAABAAEAAAAcAAUAAAABAAEAAAAcAAYAAAABAAAAADAdAAIAAAABAAAAAAAdAAMAAAABAAEAAAAdAAQAAAABAAEAAAAdAAUAAAAEAAEAADAdAAYAAAAEAAAAADAeAAIAAAACAAAAAAAeAAMAAAACAAEAAAAeAAQAAAACAAEAAAAeAAUAAAADAAEAADAeAAYAAAADAAAAADAfAAIAAAADAAAAAAAfAAMAAAADAAEAAAAfAAQAAAADAAEAAAAfAAUAAAACAAEAADAfAAYAAAACAAAAADAgAAIAAAABAAAAAAAgAAMAAAABAAEAAAAgAAQAAAAEAAEAAAAgAAUAAAABAAEAADAgAAYAAAABAAAAADAhAAIAAAABAAAAAAAhAAMAAAABAAEAAAAhAAQAAAACAAIAAAAhAAUAAAABAAEAAAAhAAYAAAABAAAAADAiAAIAAAACAAAAAAAiAAMAAAACAAEAAAAiAAQAAAACAAIAAAAiAAUAAAADAAEAADAiAAYAAAADAAAAADAjAAIAAAADAAAAAAAjAAMAAAADAAEAAAAjAAQAAAAEAAEAADAjAAUAAAACAAEAADAjAAYAAAACAAAAADAkAAIAAAAEAAAAAAAkAAMAAAAEAAEAAAAkAAQAAAADAAEAADAkAAUAAAABAAEAADAkAAYAAAABAAAAADAlAAIAAAABAAAAAAAlAAMAAAABAAEAAAAlAAQAAAACAAEAADAlAAUAAAACAAEAADAlAAYAAAACAAAAADAmAAIAAAACAAAAAAAmAAMAAAACAAEAAAAmAAQAAAABAAEAADAmAAUAAAABAAEAADAmAAYAAAABAAAAADAnAAIAAAAFAAAAAAAnAAMAAAAFAAEAAAAnAAQAAAAAAAEAADAnAAUAAAABAAAAAFAnAAYAAAAFAAUAAAASAAIAAAAAAAAAAAASAAMAAAAAAAEAAAASAAQAAAAAAAEAAAASAAUAAAAFAAEAADASAAYAAAAFAAAAADA=")
+tile_set = SubResource("TileSet_hpctd")
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="PixelLabel" type="Label" parent="Labels"]
+offset_left = 73.0
+offset_top = 170.0
+offset_right = 217.0
+offset_bottom = 202.0
+theme_override_fonts/font = ExtResource("5_uw5kh")
+theme_override_font_sizes/font_size = 32
+text = "Pixel"
+
+[node name="PeterLabel" type="Label" parent="Labels"]
+offset_left = 243.0
+offset_top = 218.0
+offset_right = 399.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("5_uw5kh")
+theme_override_font_sizes/font_size = 32
+text = "Peter"
+
+[node name="PlatformerLabel" type="Label" parent="Labels"]
+offset_left = 311.0
+offset_top = 57.0
+offset_right = 619.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("5_uw5kh")
+theme_override_font_sizes/font_size = 32
+text = "Platformer"
+
+[node name="InfoLabel" type="Label" parent="Labels"]
+offset_left = 216.0
+offset_top = 279.0
+offset_right = 632.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_lp8ad")
+theme_override_font_sizes/font_size = 16
+text = "Press any button"
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
