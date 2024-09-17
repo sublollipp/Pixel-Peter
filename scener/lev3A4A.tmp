@@ -434,8 +434,9 @@ floor_max_angle = 0.532325
 tile_set = SubResource("TileSet_n0djv")
 
 [node name="CameraLimits" type="ReferenceRect" parent="."]
-offset_left = -640.0
+offset_left = -540.0
 offset_top = -360.0
-offset_right = 640.0
+offset_right = 540.0
 offset_bottom = 360.0
+border_width = 2.0
 script = ExtResource("3_r5omq")

@@ -30,24 +30,30 @@ var chargedJumpPower: float = 0
 # Siger egentlig bare, om hop-knappen er holdt inde
 var charging: bool = false
 
+@onready var camera = $Camera2D
+
 func _process(delta: float) -> void:
 	if charging: # Kører, hvis man er på jorden, og hop-knappen er holdt nede
 		print(chargedJumpPower) # Debug statement
 		print(chargedDirectionPower) # Debug statement
 		
 		#øger directionpower intil maxniveau er ramt
-		if chargedDirectionPower < maxDirectionPower and chargedDirectionPower > -maxDirectionPower:
-			chargedDirectionPower += Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed
-		elif chargedDirectionPower > maxDirectionPower :
-			chargedDirectionPower = maxJumpPower
-		elif chargedDirectionPower < -maxDirectionPower :
-			chargedDirectionPower = -maxJumpPower
+		chargedDirectionPower = clamp(chargedDirectionPower + Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed, -maxDirectionPower, maxDirectionPower)
+		
+		#if chargedDirectionPower < maxDirectionPower and chargedDirectionPower > -maxDirectionPower:
+			#chargedDirectionPower += Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed
+		#elif chargedDirectionPower > maxDirectionPower :
+			#chargedDirectionPower = maxJumpPower
+		#elif chargedDirectionPower < -maxDirectionPower :
+			#chargedDirectionPower = -maxJumpPower
 		
 		# Øger jump poweren, indtil man har nået max niveau
-		if chargedJumpPower < maxJumpPower:
-			chargedJumpPower += jumpChargeSpeed * delta
-		elif chargedJumpPower > maxJumpPower:
-			chargedJumpPower = maxJumpPower
+		chargedJumpPower = clamp(chargedJumpPower + jumpChargeSpeed * delta, 0, maxJumpPower)
+		
+		#if chargedJumpPower < maxJumpPower:
+			#chargedJumpPower += jumpChargeSpeed * delta
+		#elif chargedJumpPower > maxJumpPower:
+			#chargedJumpPower = maxJumpPower
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
@@ -96,3 +102,13 @@ func jump() -> void:
 	
 	chargedDirectionPower = 0
 	chargedJumpPower = 0
+
+func setCameraSettings(rectPos: Vector2, rectSize: Vector2, zoom: float, offset: Vector2) -> void:
+	if rectSize != Vector2.ZERO:
+		camera.limit_left = rectPos.x
+		camera.limit_right = rectPos.x + rectSize.x
+		camera.limit_top = rectPos.y
+		camera.limit_bottom = rectPos.y + rectSize.y
+		camera.zoom = Vector2(zoom, zoom)
+	else:
+		camera.enabled = false
