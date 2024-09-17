@@ -12,7 +12,7 @@ const jumpChargeSpeed: int = 360
 const maxJumpPower: int = 600
 const maxDirectionPower: int = 600
 
-const directionChangeSpeed = 10
+const directionChangeSpeed = 600
 
 var chargedDirectionPower: float = 0
 
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	if charging: # Kører, hvis man er på jorden, og hop-knappen er holdt nede
 		
 		#øger directionpower intil maxniveau er ramt
-		chargedDirectionPower = clamp(chargedDirectionPower + Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed, -maxDirectionPower, maxDirectionPower)
+		chargedDirectionPower = clamp(chargedDirectionPower + Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed * delta, -maxDirectionPower, maxDirectionPower)
 		
 		#if chargedDirectionPower < maxDirectionPower and chargedDirectionPower > -maxDirectionPower:
 			#chargedDirectionPower += Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed
@@ -71,9 +71,6 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
-	print("Is on floor:", is_on_floor())
-	print("Direction: ", direction)
-	print("X velocity: ", position.x - previousX)
 		
 	#Opdaterer previousVelocity
 	previousVelocity = velocity
