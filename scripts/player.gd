@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
-@onready var timer = $Timer
+@export var timeInvincible: float = 1 ## Antal sekunder Peter er uovervindelig efter han har taget skade
+@export var invincible_pulse_speed: float = 10 ## Hvor hurtigt spilleren flasher hvidt, når den er invincible
+@export var running_out_pulse_speed:float = 20 ## Hvor hurtigt spilleren flasher hvid 2 sekunder inden, den bliver dødelig igen
 
+@onready var timer = $Timer
+@onready var sprite = $AnimatedSprite2D
 
 # Den jump power, et hop starter på
 const startingPower: int = 120
@@ -25,8 +29,8 @@ var idle: bool = true
 # Hvor meget af ens vandrette hastighed bliver beholdt i et bounce
 const bounceRetention: float = 0.55
 
+# Hvis denne er sand, kan Peter ikke tage skade
 var invincibility: bool = false
-@export var timeInvincible: float = 1 ##Antal sekunder han er uovervindelig efter han har taget skade
 
 # Holder styr på, hvad spillerens hastighed var i sidste frame
 var previousVelocity: Vector2 = Vector2.ZERO
@@ -41,9 +45,12 @@ var died: bool = false
 var coinsCollected = 0
 
 func _ready():
-	timer.wait_time=timeInvincible
+	timer.wait_time = timeInvincible
 	
 func _process(delta: float) -> void:
+	if invincibility:
+		if timer.time_left <= 1:
+			sprite.material.set_shader_parameter("pulse_speed", running_out_pulse_speed)
 	
 	if charging: # Kører, hvis man er på jorden, og hop-knappen er holdt nede
 		#øger directionpower intil maxniveau er ramt
@@ -51,7 +58,7 @@ func _process(delta: float) -> void:
 		# Øger jump poweren, indtil man har nået max niveau
 		chargedJumpPower = clamp(chargedJumpPower + jumpChargeSpeed * delta, 0, maxJumpPower)
 
-		$AnimatedSprite2D.material.set_shader_parameter("charge", chargedJumpPower / maxJumpPower)
+		sprite.material.set_shader_parameter("charge", chargedJumpPower / maxJumpPower)
 
 	if health <= 0:
 		died = true
@@ -70,15 +77,15 @@ func _physics_process(delta: float) -> void:
 	#Sørger for, at spilleren står stille, når den er på gulvet. Altså nul sliding osv.
 	if is_on_floor():
 		velocity = Vector2.ZERO
-		if $AnimatedSprite2D.animation == "flying"+str(health) or idle:
-			$AnimatedSprite2D.play("idle"+str(health))
+		if sprite.animation == "flying"+str(health) or idle:
+			sprite.play("idle"+str(health))
 			idle = true
 		
 	else:
 		if position.x - previousX > 0:
-			$AnimatedSprite2D.flip_h = true
+			sprite.flip_h = true
 		else:
-			$AnimatedSprite2D.flip_h = false
+			sprite.flip_h = false
 		
 	#Opdaterer previousVelocity
 	previousVelocity = velocity
@@ -92,28 +99,28 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 	if is_on_floor(): # Hvis man er i luften, skal man være ude af kontrol. Hermed kører input-koden kun, når man er på jorden
 		if event.is_action_pressed("HØJRE"):
 			direction = 1
-			$AnimatedSprite2D.flip_h = true
+			sprite.flip_h = true
 	#Opdaterer spriten ift hvor meget liv player har animationerne bliver kaldt bygget på hp
 			
 		elif event.is_action_pressed("VENSTRE"):
 			direction = -1
-			$AnimatedSprite2D.flip_h = false
+			sprite.flip_h = false
 		if event.is_action_pressed("HOP"):
 			chargedJumpPower = startingPower
 			charging = true
 			idle = false
 			
-			$AnimatedSprite2D.play("charging"+str(health))
+			sprite.play("charging"+str(health))
 			
 		elif event.is_action_released("HOP"):
 			charging = false
 			jump()
-			$AnimatedSprite2D.play("flying"+str(health))
+			sprite.play("flying"+str(health))
 			
 			
-		if event.is_action_pressed("Take_damege"):
+		if event.is_action_pressed("Take_damage"):
 			health -= 1
-			$AnimatedSprite2D.play("idle"+str(health))
+			sprite.play("idle"+str(health))
 	else:
 		charging = false
 		#$AnimatedSprite2D.play("flying"+str(health))
@@ -124,20 +131,23 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 func jump() -> void:
 	velocity.y = -chargedJumpPower
 	velocity.x = chargedDirectionPower
-	$AnimatedSprite2D.material.set_shader_parameter("charge", 0)
+	sprite.material.set_shader_parameter("charge", 0)
 	
 	chargedDirectionPower = 0
 	chargedJumpPower = 0
 
 
 func _on_area_2d_area_entered(area):
-	#differentier mellem layersne/ areasne kan ikke få det til at virke uden en lang refferance til coins altså noget son $//coins blalbla
+	#Differentier mellem layersne/ areasne kan ikke få det til at virke uden en lang refferance til coins altså noget son $//coins blalbla
 	
+	#Fuck hvor er det her konge lavet. Du har cooket max
 	if area.is_in_group("GroupEnemy"):
 		if !invincibility:
 			health -= 1
 			invincibility = true
 			timer.start()
+			sprite.material.set_shader_parameter("invincible", true)
+			$CPUParticles2D.emitting = true
 		
 	if area.is_in_group("GroupCoins"):
 		coinsCollected += 1
@@ -148,16 +158,16 @@ func _on_area_2d_area_entered(area):
 			health += 1
 		
 		
-	# Dette skal af spille ved collision med enimy
+	# Dette skal afspilles ved collision med enemy
 	
-
-	
-	var AnimationUpdate = $AnimatedSprite2D.animation
+	var AnimationUpdate = sprite.animation
 	AnimationUpdate = AnimationUpdate.left(-1)
 	AnimationUpdate += str(health)
-	$AnimatedSprite2D.animation = AnimationUpdate
+	sprite.animation = AnimationUpdate
 
 
 
 func _on_timer_timeout():
 	invincibility = false
+	sprite.material.set_shader_parameter("invincible", false)
+	sprite.material.set_shader_parameter("pulse_speed", invincible_pulse_speed)

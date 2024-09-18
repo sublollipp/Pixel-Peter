@@ -27,17 +27,24 @@ autoplay = "walking"
 [node name="Pterosaurus" parent="Enemies" index="1" instance=ExtResource("3_xx71p")]
 speed = 80
 
-[node name="coins" parent="." index="4" instance=ExtResource("4_dmu4u")]
-position = Vector2(115, 49)
+[node name="Psykolog2" parent="Enemies" index="2" instance=ExtResource("2_tmnrh")]
+position = Vector2(155, 48)
 
-[node name="coins2" parent="." index="5" instance=ExtResource("4_dmu4u")]
-position = Vector2(-11, -111)
+[node name="Potions" type="Node" parent="." index="4"]
 
-[node name="coins3" parent="." index="6" instance=ExtResource("4_dmu4u")]
-position = Vector2(186, -158)
-
-[node name="potion" parent="." index="7" instance=ExtResource("5_d6mkt")]
+[node name="potion" parent="Potions" index="0" instance=ExtResource("5_d6mkt")]
 position = Vector2(-119, 46)
 
-[node name="potion2" parent="." index="8" instance=ExtResource("5_d6mkt")]
+[node name="potion2" parent="Potions" index="1" instance=ExtResource("5_d6mkt")]
 position = Vector2(60, -210)
+
+[node name="Coins" type="Node" parent="." index="5"]
+
+[node name="coins" parent="Coins" index="0" instance=ExtResource("4_dmu4u")]
+position = Vector2(115, 49)
+
+[node name="coins2" parent="Coins" index="1" instance=ExtResource("4_dmu4u")]
+position = Vector2(-11, -111)
+
+[node name="coins3" parent="Coins" index="2" instance=ExtResource("4_dmu4u")]
+position = Vector2(186, -158)
