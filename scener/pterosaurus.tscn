@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c8q71uvnpxdui"]
 
 [ext_resource type="Texture2D" uid="uid://dpkjwv4vtdpy0" path="res://assets/Sprites/enemies.png" id="1_1gt3q"]
-[ext_resource type="Script" path="res://scener/pterosaurus.gd" id="1_q776u"]
+[ext_resource type="Script" path="res://scripts/pterosaurus.gd" id="1_q776u"]
 
 [sub_resource type="Curve2D" id="Curve2D_mor3d"]
 _data = {
@@ -51,7 +51,7 @@ script = ExtResource("1_q776u")
 speed = 50
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-152.106, -86.9627)
+position = Vector2(-152.106, -86.9626)
 rotation = 3.14159
 progress = 177.553
 rotates = false

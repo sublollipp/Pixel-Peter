@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="2_wqpt1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvcpj"]
-height = 22.0
+radius = 9.0
+height = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4lpoq"]
 atlas = ExtResource("2_wqpt1")
@@ -169,13 +170,26 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 4
 script = ExtResource("1_a8y3o")
+timeInvincible = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_gvcpj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_redn5")
-
 animation = &"idle2"
-
 autoplay = "idle3"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_gvcpj")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -10,9 +10,7 @@ var direction = 1 # 1 er højre, -1 er venstre
 func detectTurn() -> void:
 	if !diaCast.is_colliding() || hCast.is_colliding():
 		direction *= -1
-		print("diaCast: ", diaCast.is_colliding())
-		print("hCast: ", hCast.is_colliding())
-		print(direction)
+		
 
 func _physics_process(delta: float) -> void:
 	diaCast.scale.x = direction * -1
