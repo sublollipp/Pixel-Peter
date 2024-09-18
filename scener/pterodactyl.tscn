@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://btqqep8r3ful2"]
+
+[ext_resource type="PackedScene" uid="uid://ckkqgnj0xn5tb" path="res://scener/enemy.tscn" id="1_l8vnj"]
+[ext_resource type="Script" path="res://scripts/pterodactyl.gd" id="2_1no7r"]
+
+[node name="Enemy" instance=ExtResource("1_l8vnj")]
+position = Vector2(0, 0)
+autoplay = "flying_pterodactyl"
+frame_progress = 0.839742
+script = ExtResource("2_1no7r")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -2.97674)
+rotation = 1.5708
+
+[node name="Path" type="Line2D" parent="." index="1"]

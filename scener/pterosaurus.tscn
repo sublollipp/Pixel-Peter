@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8q71uvnpxdui"]
+
+[ext_resource type="Texture2D" uid="uid://dpkjwv4vtdpy0" path="res://assets/Sprites/enemies.png" id="1_1gt3q"]
+[ext_resource type="Script" path="res://scener/pterosaurus.gd" id="1_q776u"]
+
+[sub_resource type="Curve2D" id="Curve2D_mor3d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -28, -214, 0, 0, 0, 0, -155, -84)
+}
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4h05"]
+atlas = ExtResource("1_1gt3q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxqg1"]
+atlas = ExtResource("1_1gt3q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgf6k"]
+atlas = ExtResource("1_1gt3q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qy0s"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_n4h05")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_dxqg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgf6k")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_dxqg1")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5hn7m"]
+radius = 4.0
+height = 26.0
+
+[node name="Pterosaurus" type="Path2D"]
+curve = SubResource("Curve2D_mor3d")
+script = ExtResource("1_q776u")
+speed = 50
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-152.106, -86.9627)
+rotation = 3.14159
+progress = 177.553
+rotates = false
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D"]
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_1qy0s")
+animation = &"flying"
+autoplay = "flying"
+frame_progress = 0.356099
+
+[node name="Area2D" type="Area2D" parent="PathFollow2D/AnimatedSprite2D"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/AnimatedSprite2D/Area2D"]
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5hn7m")

@@ -5,6 +5,7 @@
 
 [node name="Psykolog" instance=ExtResource("1_7jbb4")]
 scale = Vector2(1, 1)
+animation = &"walking_psykolog"
 script = ExtResource("3_jcj8i")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://d2w1fvcxisub1"]
+[gd_scene load_steps=4 format=4 uid="uid://d2w1fvcxisub1"]
 
 [ext_resource type="PackedScene" uid="uid://ceoqisagjti7f" path="res://scener/level.tscn" id="1_xxa1l"]
 [ext_resource type="PackedScene" uid="uid://bqddhulnmyq1g" path="res://scener/psykolog.tscn" id="2_tmnrh"]
+[ext_resource type="PackedScene" uid="uid://c8q71uvnpxdui" path="res://scener/pterosaurus.tscn" id="3_xx71p"]
 
 [node name="Level 1" instance=ExtResource("1_xxa1l")]
 
@@ -19,4 +20,7 @@ offset = Vector2(8.5, -96.715)
 
 [node name="Psykolog" parent="Enemies" index="0" instance=ExtResource("2_tmnrh")]
 position = Vector2(-49, -112)
-frame_progress = 0.141447
+autoplay = "walking"
+
+[node name="Pterosaurus" parent="Enemies" index="1" instance=ExtResource("3_xx71p")]
+speed = 80
