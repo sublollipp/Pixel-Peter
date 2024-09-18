@@ -32,6 +32,8 @@ var chargedJumpPower: float = 0
 # Siger egentlig bare, om hop-knappen er holdt inde
 var charging: bool = false
 
+var died: bool = false
+
 func _process(delta: float) -> void:
 	
 	if charging: # Kører, hvis man er på jorden, og hop-knappen er holdt nede
@@ -39,20 +41,15 @@ func _process(delta: float) -> void:
 		#øger directionpower intil maxniveau er ramt
 		chargedDirectionPower = clamp(chargedDirectionPower + Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed * delta, -maxDirectionPower, maxDirectionPower)
 		
-		#if chargedDirectionPower < maxDirectionPower and chargedDirectionPower > -maxDirectionPower:
-			#chargedDirectionPower += Input.get_axis("VENSTRE", "HØJRE") * directionChangeSpeed
-		#elif chargedDirectionPower > maxDirectionPower :
-			#chargedDirectionPower = maxJumpPower
-		#elif chargedDirectionPower < -maxDirectionPower :
-			#chargedDirectionPower = -maxJumpPower
-		
 		# Øger jump poweren, indtil man har nået max niveau
 		chargedJumpPower = clamp(chargedJumpPower + jumpChargeSpeed * delta, 0, maxJumpPower)
+	if health <= 0:
+		died = true
 		
-		#if chargedJumpPower < maxJumpPower:
-			#chargedJumpPower += jumpChargeSpeed * delta
-		#elif chargedJumpPower > maxJumpPower:
-			#chargedJumpPower = maxJumpPower
+		#midlertidig øjebliklig død
+		if died:
+			get_tree().change_scene_to_file("res://scener/game_over.tscn")
+		
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
@@ -108,6 +105,9 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 	else:
 		charging = false
 		#$AnimatedSprite2D.play("flying"+str(health))
+	if event.is_action_pressed("Menu_Pause"):
+		#burde omskrives så games process og fysisk process pauses og main menu bare er et overlay således at progress ikke mistes
+		get_tree().change_scene_to_file("res://scener/main_menu.tscn")
 
 func jump() -> void:
 	velocity.y = -chargedJumpPower
