@@ -1,14 +1,14 @@
-[gd_scene load_steps=30 format=4 uid="uid://cviksreb41jfp"]
+[gd_scene load_steps=30 format=4 uid="uid://bwk66xhmwtp5i"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ghnms"]
-[ext_resource type="Texture2D" uid="uid://dxdh2585guppm" path="res://assets/free-swamp-game-tileset-pixel-art/2 Background/Background.png" id="1_mwtqk"]
-[ext_resource type="Texture2D" uid="uid://bjtwmgrptjvqd" path="res://assets/Tilemap/Tileset.png" id="2_42vrf"]
-[ext_resource type="FontFile" uid="uid://bsghkecgtq7tr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_egpb6"]
-[ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="4_iw6d3"]
-[ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="6_n6v70"]
+[ext_resource type="Texture2D" uid="uid://dxdh2585guppm" path="res://assets/free-swamp-game-tileset-pixel-art/2 Background/Background.png" id="1_4we4v"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_ltn6o"]
+[ext_resource type="Texture2D" uid="uid://bjtwmgrptjvqd" path="res://assets/Tilemap/Tileset.png" id="2_m035a"]
+[ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="3_6esi5"]
+[ext_resource type="FontFile" uid="uid://bsghkecgtq7tr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_wjl48"]
+[ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="6_ohye0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_am6dc"]
-texture = ExtResource("2_42vrf")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dvoxi"]
+texture = ExtResource("2_m035a")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -234,90 +234,90 @@ texture = ExtResource("2_42vrf")
 18:11/0 = 0
 19:11/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_4f3yy"]
-sources/0 = SubResource("TileSetAtlasSource_am6dc")
+[sub_resource type="TileSet" id="TileSet_5joqr"]
+sources/0 = SubResource("TileSetAtlasSource_dvoxi")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tg2kw"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iolb3"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bxb1l"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2y0xi"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dp3sm"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0u1b2"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2c2ji"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd1kr"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xu4ov"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5sl7b"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2bsko"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ttb0b"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0nes"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_km4tg"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_01quw"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqr2o"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnibt"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5lvd"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igsoo"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgn6p"]
-atlas = ExtResource("6_n6v70")
+atlas = ExtResource("6_ohye0")
 region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_b8gla"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_i51oi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -395,64 +395,74 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Main_Menu" type="Node2D"]
-script = ExtResource("1_ghnms")
+[node name="Game_Over" type="Node2D"]
+script = ExtResource("1_ltn6o")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(323, 182)
 scale = Vector2(1.12346, 1.12346)
-texture = ExtResource("1_mwtqk")
+texture = ExtResource("1_4we4v")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(323, 182)
 scale = Vector2(1.12346, 1.12346)
-tile_map_data = PackedByteArray("AAAFAAAAAAAAAAAAAAAFAAEAAAAAAAEAAAAFAAIAAAAAAAUAAAAGAAAAAAABAAAAAAAGAAEAAAABAAEAAAAGAAIAAAABAAUAAAAHAAAAAAACAAAAAAAHAAEAAAACAAEAAAAHAAIAAAACAAUAAAAIAAAAAAADAAAAAAAIAAEAAAADAAEAAAAIAAIAAAADAAUAAAAJAAAAAAABAAAAAAAJAAEAAAAEAAEAAAAJAAIAAAAEAAUAAAAKAAAAAAABAAAAAAAKAAEAAAACAAIAAAAKAAIAAAACAAUAAAALAAAAAAACAAAAAAALAAEAAAACAAIAAAALAAIAAAADAAUAAAAMAAAAAAADAAAAAAAMAAEAAAAEAAEAADAMAAIAAAABAAUAAAANAAAAAAAEAAAAAAANAAEAAAADAAEAADANAAIAAAACAAUAAAAOAAAAAAABAAAAAAAOAAEAAAACAAEAADAOAAIAAAADAAUAAAAPAAAAAAACAAAAAAAPAAEAAAABAAEAADAPAAIAAAAEAAUAAAAQAAAAAAAFAAAAAAAQAAEAAAAAAAEAADAQAAIAAAAFAAUAAAD4/wMAAAACAAAAAAD4/wQAAAACAAEAAAD5/wMAAAADAAAAAAD5/wQAAAADAAEAAAD6/wMAAAABAAAAAAD6/wQAAAAEAAEAAAD7/wMAAAABAAAAAAD7/wQAAAACAAIAAAD8/wMAAAACAAAAAAD8/wQAAAACAAIAAAD9/wMAAAADAAAAAAD9/wQAAAAEAAEAADD+/wMAAAAEAAAAAAD+/wQAAAADAAEAADD//wMAAAABAAAAAAD//wQAAAACAAEAADAAAAMAAAACAAAAAAAAAAQAAAABAAEAADABAAMAAAAFAAAAAAABAAQAAAAAAAEAADD2/wMAAAAAAAAAAAD2/wQAAAAAAAEAAAD2/wUAAAAAAAUAAAD3/wMAAAABAAAAAAD3/wQAAAABAAEAAAD3/wUAAAABAAUAAAD4/wUAAAACAAUAAAD5/wUAAAADAAUAAAD6/wUAAAAEAAUAAAD7/wUAAAACAAUAAAD8/wUAAAADAAUAAAD9/wUAAAABAAUAAAD+/wUAAAACAAUAAAD//wUAAAADAAUAAAAAAAUAAAAEAAUAAAABAAUAAAAFAAUAAADz//7/AAAAAAAAAADz////AAAAAAEAAAD0//7/AAABAAAAAAD0////AAABAAEAAAD1//7/AAACAAAAAAD1////AAACAAEAAAD2//7/AAADAAAAAAD2////AAADAAEAAAD3//7/AAABAAAAAAD3////AAAEAAEAAAD4//7/AAABAAAAAAD4////AAACAAIAAAD5//7/AAACAAAAAAD5////AAACAAIAAAD6//7/AAADAAAAAAD6////AAAEAAEAADD7//7/AAAEAAAAAAD7////AAADAAEAADD8//7/AAABAAAAAAD8////AAACAAEAADD9//7/AAACAAAAAAD9////AAABAAEAADD+//7/AAAFAAAAAAD+////AAAAAAEAADDz/wAAAAAAAAUAAAD0/wAAAAABAAUAAAD1/wAAAAACAAUAAAD2/wAAAAADAAUAAAD3/wAAAAAEAAUAAAD4/wAAAAACAAUAAAD5/wAAAAADAAUAAAD6/wAAAAABAAUAAAD7/wAAAAACAAUAAAD8/wAAAAADAAUAAAD9/wAAAAAEAAUAAAD+/wAAAAAFAAUAAAA=")
-tile_set = SubResource("TileSet_4f3yy")
-
-[node name="MainMenuLabel" type="Label" parent="."]
-offset_left = 188.0
-offset_top = 60.0
-offset_right = 460.0
-offset_bottom = 92.0
-theme_override_fonts/font = ExtResource("3_egpb6")
-theme_override_font_sizes/font_size = 32
-text = "Main Menu"
+tile_map_data = PackedByteArray("AAD3////AAAAAAAAAAD3/wAAAAAAAAEAAAD4////AAABAAAAAAD4/wAAAAABAAEAAAD5////AAACAAAAAAD5/wAAAAACAAEAAAD6////AAADAAAAAAD6/wAAAAADAAEAAAD7////AAABAAAAAAD7/wAAAAAEAAEAAAD8////AAABAAAAAAD8/wAAAAACAAIAAAD9////AAACAAAAAAD9/wAAAAACAAIAAAD+////AAADAAAAAAD+/wAAAAAEAAEAADD3/wEAAAAAAAUAAAD4/wEAAAABAAUAAAD5/wEAAAACAAUAAAD6/wEAAAADAAUAAAD7/wEAAAAEAAUAAAD8/wEAAAACAAUAAAD9/wEAAAADAAUAAAD+/wEAAAABAAUAAAD/////AAAEAAAAAAD//wAAAAADAAEAADD//wEAAAACAAUAAAAAAP//AAABAAAAAAAAAAAAAAACAAEAADAAAAEAAAADAAUAAAABAP//AAACAAAAAAABAAAAAAABAAEAADABAAEAAAAEAAUAAAACAP//AAAFAAAAAAACAAAAAAAAAAEAADACAAEAAAAFAAUAAAAAAAUAAAAAAAAAAAABAAUAAAABAAAAAAACAAUAAAACAAAAAAADAAUAAAADAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAACAAAAAAAHAAUAAAADAAAAAAAIAAUAAAAEAAAAAAAJAAUAAAABAAAAAAAAAAYAAAAAAAEAAAAAAAcAAAAAAAUAAAABAAYAAAABAAEAAAABAAcAAAABAAUAAAACAAYAAAACAAEAAAACAAcAAAACAAUAAAADAAYAAAADAAEAAAADAAcAAAADAAUAAAAEAAYAAAAEAAEAAAAEAAcAAAAEAAUAAAAFAAYAAAACAAIAAAAFAAcAAAACAAUAAAAGAAYAAAACAAIAAAAGAAcAAAADAAUAAAAHAAYAAAAEAAEAADAHAAcAAAABAAUAAAAIAAYAAAADAAEAADAIAAcAAAACAAUAAAAJAAYAAAACAAEAADAJAAcAAAADAAUAAAAKAAUAAAACAAAAAAAKAAYAAAABAAEAADAKAAcAAAAEAAUAAAALAAUAAAAFAAAAAAALAAYAAAAAAAEAADALAAcAAAAFAAUAAADx/wMAAAAAAAAAAADx/wQAAAAAAAEAAADx/wUAAAAAAAUAAADy/wMAAAABAAAAAADy/wQAAAABAAEAAADy/wUAAAABAAUAAADz/wMAAAACAAAAAADz/wQAAAACAAEAAADz/wUAAAACAAUAAAD0/wMAAAADAAAAAAD0/wQAAAADAAEAAAD0/wUAAAADAAUAAAD1/wMAAAABAAAAAAD1/wQAAAAEAAEAAAD1/wUAAAAEAAUAAAD2/wMAAAABAAAAAAD2/wQAAAACAAIAAAD2/wUAAAACAAUAAAD3/wMAAAACAAAAAAD3/wQAAAACAAIAAAD3/wUAAAADAAUAAAD4/wMAAAADAAAAAAD4/wQAAAAEAAEAADD4/wUAAAABAAUAAAD5/wMAAAAEAAAAAAD5/wQAAAADAAEAADD5/wUAAAACAAUAAAD6/wMAAAABAAAAAAD6/wQAAAACAAEAADD6/wUAAAADAAUAAAD7/wMAAAACAAAAAAD7/wQAAAABAAEAADD7/wUAAAAEAAUAAAD8/wMAAAAFAAAAAAD8/wQAAAAAAAEAADD8/wUAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_5joqr")
 
 [node name="Buttons" type="Node" parent="."]
 
-[node name="StartGameButton" type="Button" parent="Buttons"]
-offset_left = 90.0
-offset_top = 146.0
-offset_right = 305.0
-offset_bottom = 200.0
-theme_override_fonts/font = ExtResource("4_iw6d3")
-text = "Start Game"
-
-[node name="SettingsButton" type="Button" parent="Buttons"]
-offset_left = 143.0
-offset_top = 236.0
-offset_right = 358.0
-offset_bottom = 290.0
-theme_override_fonts/font = ExtResource("4_iw6d3")
-text = "Settings"
+[node name="Start Again" type="Button" parent="Buttons"]
+offset_left = 162.0
+offset_top = 164.0
+offset_right = 377.0
+offset_bottom = 218.0
+theme_override_fonts/font = ExtResource("3_6esi5")
+text = "Start Again"
 
 [node name="ExitButton" type="Button" parent="Buttons"]
-offset_left = 413.0
-offset_top = 182.0
-offset_right = 628.0
-offset_bottom = 236.0
-theme_override_fonts/font = ExtResource("4_iw6d3")
+offset_left = 323.0
+offset_top = 272.0
+offset_right = 538.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("3_6esi5")
 text = "Exit"
 
+[node name="MainMenuButton" type="Button" parent="Buttons"]
+offset_left = 54.0
+offset_top = 236.0
+offset_right = 269.0
+offset_bottom = 290.0
+theme_override_fonts/font = ExtResource("3_6esi5")
+text = "Main Menu"
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = 199.0
+offset_top = 64.0
+offset_right = 471.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("4_wjl48")
+theme_override_font_sizes/font_size = 32
+text = "Game Over"
+
+[node name="YouDiedLabel" type="Label" parent="."]
+offset_left = 194.0
+offset_top = 102.0
+offset_right = 466.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("3_6esi5")
+theme_override_font_sizes/font_size = 16
+text = "You have died"
+horizontal_alignment = 1
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(126, 122.152)
-scale = Vector2(1.4375, 1.45928)
-sprite_frames = SubResource("SpriteFrames_b8gla")
+position = Vector2(501, 238)
+scale = Vector2(2.0625, 2.09375)
+sprite_frames = SubResource("SpriteFrames_i51oi")
 animation = &"PixelP1"
 autoplay = "PixelP1"
-flip_h = true
 
-[connection signal="button_up" from="Buttons/StartGameButton" to="." method="_on_start_game_button_button_up"]
-[connection signal="button_up" from="Buttons/SettingsButton" to="." method="_on_settings_button_button_up"]
+[connection signal="button_up" from="Buttons/Start Again" to="." method="_on_start_again_button_up"]
 [connection signal="button_up" from="Buttons/ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
+[connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_exit_button_button_up"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
