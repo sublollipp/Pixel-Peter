@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://deb16og8y3b4o"]
+
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_gruj4"]
+[ext_resource type="Texture2D" uid="uid://bljr7331p4a2m" path="res://assets/Sprites/items.png" id="2_1qv1i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6il6"]
+atlas = ExtResource("2_1qv1i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c28kf"]
+atlas = ExtResource("2_1qv1i")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h43t"]
+atlas = ExtResource("2_1qv1i")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btvq6"]
+atlas = ExtResource("2_1qv1i")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu1rb"]
+atlas = ExtResource("2_1qv1i")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq6rx"]
+atlas = ExtResource("2_1qv1i")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oggsn"]
+atlas = ExtResource("2_1qv1i")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rowbd"]
+atlas = ExtResource("2_1qv1i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gybf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6il6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c28kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h43t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btvq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu1rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq6rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oggsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rowbd")
+}],
+"loop": false,
+"name": &"Shine",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_reh5a"]
+radius = 13.0
+
+[node name="coin" type="Node2D"]
+script = ExtResource("1_gruj4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gybf0")
+animation = &"Shine"
+frame = 7
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="." groups=["GroupCoins"]]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_reh5a")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

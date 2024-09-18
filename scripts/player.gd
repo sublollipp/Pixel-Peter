@@ -38,6 +38,8 @@ var direction: float = 0
 var health = 3
 var died: bool = false
 
+var coinsCollected = 0
+
 func _ready():
 	timer.wait_time=timeInvincible
 	
@@ -60,7 +62,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
-	print(invincibility)
+	
 	#Bouncer, når spilleren er på væggen
 	if is_on_wall():
 		velocity.x = previousVelocity.x * -bounceRetention
@@ -129,11 +131,25 @@ func jump() -> void:
 
 
 func _on_area_2d_area_entered(area):
-	if !invincibility:
-		health -= 1
-		invincibility = true
-		timer.start()
+	#differentier mellem layersne/ areasne kan ikke få det til at virke uden en lang refferance til coins altså noget son $//coins blalbla
+	
+	if area.is_in_group("GroupEnemy"):
+		if !invincibility:
+			health -= 1
+			invincibility = true
+			timer.start()
 		
+	if area.is_in_group("GroupCoins"):
+		coinsCollected += 1
+		print(coinsCollected)
+	
+	if area.is_in_group("GroupPotion"):
+		if health < 3:
+			health += 1
+		
+		
+	# Dette skal af spille ved collision med enimy
+	
 
 	
 	var AnimationUpdate = $AnimatedSprite2D.animation

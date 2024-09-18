@@ -64,7 +64,7 @@ animation = &"flying"
 autoplay = "flying"
 frame_progress = 0.350853
 
-[node name="Area2D" type="Area2D" parent="PathFollow2D/AnimatedSprite2D"]
+[node name="Area2D" type="Area2D" parent="PathFollow2D/AnimatedSprite2D" groups=["GroupEnemy"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/AnimatedSprite2D/Area2D"]
