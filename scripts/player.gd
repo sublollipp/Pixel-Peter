@@ -43,6 +43,8 @@ func _process(delta: float) -> void:
 		
 		# Øger jump poweren, indtil man har nået max niveau
 		chargedJumpPower = clamp(chargedJumpPower + jumpChargeSpeed * delta, 0, maxJumpPower)
+		$AnimatedSprite2D.material.set_shader_parameter("charge", chargedJumpPower / maxJumpPower)
+		
 	if health <= 0:
 		died = true
 		
@@ -112,6 +114,7 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 func jump() -> void:
 	velocity.y = -chargedJumpPower
 	velocity.x = chargedDirectionPower
+	$AnimatedSprite2D.material.set_shader_parameter("charge", 0)
 	
 	chargedDirectionPower = 0
 	chargedJumpPower = 0

@@ -51,7 +51,7 @@ script = ExtResource("1_q776u")
 speed = 50
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-152.106, -86.9627)
+position = Vector2(-152.106, -86.9626)
 rotation = 3.14159
 progress = 177.553
 rotates = false
