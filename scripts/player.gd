@@ -82,7 +82,6 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker noget som helst med inputsne
 	if is_on_floor(): # Hvis man er i luften, skal man være ude af kontrol. Hermed kører input-koden kun, når man er på jorden
-		$AnimatedSprite2D.play("idle"+str(health))
 		if event.is_action_pressed("HØJRE"):
 			direction = 1
 			$AnimatedSprite2D.flip_h = true

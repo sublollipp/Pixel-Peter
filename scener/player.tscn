@@ -82,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rbhm7")
 }],
-"loop": true,
+"loop": false,
 "name": &"charging1",
 "speed": 5.0
 }, {
@@ -93,7 +93,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mqccr")
 }],
-"loop": true,
+"loop": false,
 "name": &"charging2",
 "speed": 5.0
 }, {
@@ -104,7 +104,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y3hw5")
 }],
-"loop": true,
+"loop": false,
 "name": &"charging3",
 "speed": 5.0
 }, {
@@ -176,6 +176,6 @@ shape = SubResource("CapsuleShape2D_gvcpj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(184, -57)
 sprite_frames = SubResource("SpriteFrames_redn5")
-animation = &"idle1"
+animation = &"charging1"
 autoplay = "idle3"
 offset = Vector2(-184, 55)
