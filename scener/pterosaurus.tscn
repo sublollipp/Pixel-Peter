@@ -62,7 +62,7 @@ rotation = 3.14159
 sprite_frames = SubResource("SpriteFrames_1qy0s")
 animation = &"flying"
 autoplay = "flying"
-frame_progress = 0.356099
+frame_progress = 0.350853
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D/AnimatedSprite2D"]
 collision_layer = 2
