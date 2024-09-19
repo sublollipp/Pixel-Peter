@@ -18,8 +18,8 @@ const directionChangeSpeed: int = 600
 var chargedJumpPower: float = 0
 var chargedDirectionPower: float = 0
 
-const maxJumpPower: int = 600
-const maxDirectionPower: int = 600
+const maxJumpPower: int = 500
+const maxDirectionPower: int = 500
 
 # Siger egentlig bare, om hop-knappen er holdt inde
 var charging: bool = false
