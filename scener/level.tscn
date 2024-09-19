@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceoqisagjti7f"]
+[gd_scene load_steps=7 format=3 uid="uid://ceoqisagjti7f"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_vwtwt"]
 [ext_resource type="PackedScene" uid="uid://krkq8yw3n57c" path="res://scener/player.tscn" id="2_bfmd0"]
 [ext_resource type="Texture2D" uid="uid://tavyyt2pyxqm" path="res://assets/Tilemap/pixelpeter_tileset1.png" id="3_e2158"]
-[ext_resource type="Script" path="res://scripts/camera_limits.gd" id="3_r5omq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnpih"]
 texture = ExtResource("3_e2158")
@@ -877,24 +875,21 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_3cafe"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_w8ldn")
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_vwtwt")
 
 [node name="Player" parent="." instance=ExtResource("2_bfmd0")]
 floor_max_angle = 0.532325
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -100)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+
 [node name="Baggrund" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_i2pe3")
-
-[node name="CameraLimits" type="ReferenceRect" parent="."]
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-script = ExtResource("3_r5omq")
 
 [node name="Enemies" type="Node" parent="."]
 
