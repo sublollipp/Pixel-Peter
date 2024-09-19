@@ -156,6 +156,7 @@ func _on_area_2d_area_entered(area):
 		
 	if area.is_in_group("GroupCoins"):
 		coinsCollected += 1
+		Globals.coinCollected()
 		print(coinsCollected)
 	
 	if area.is_in_group("GroupPotion"):

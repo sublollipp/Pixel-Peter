@@ -10,3 +10,5 @@ tile_map_data = PackedByteArray("AAD+/wEAAAAJAAMAAAD+/wIAAAAJAAQAAAD+/wMAAAAJAAU
 [node name="Potions" type="Node" parent="." index="4"]
 
 [node name="Coins" type="Node" parent="." index="5"]
+
+[editable path="CanvasLayer/coin"]
