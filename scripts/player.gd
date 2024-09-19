@@ -44,8 +44,10 @@ var died: bool = false
 
 var coinsCollected = 0
 
+var StartPos
 func _ready():
 	timer.wait_time = timeInvincible
+	StartPos = position
 	
 func _process(delta: float) -> void:
 	if invincibility:
@@ -127,6 +129,9 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 	if event.is_action_pressed("Menu_Pause"):
 		#burde omskrives så games process og fysisk process pauses og main menu bare er et overlay således at progress ikke mistes
 		get_tree().change_scene_to_file("res://scener/main_menu.tscn")
+	if event.is_action_pressed("MousePressed"):
+		#for at kunne teste level
+		position = get_local_mouse_position()+position
 
 func jump() -> void:
 	velocity.y = -chargedJumpPower
