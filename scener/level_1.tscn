@@ -22,7 +22,6 @@ offset = Vector2(8.5, -96.715)
 
 [node name="Psykolog" parent="Enemies" index="0" instance=ExtResource("2_tmnrh")]
 position = Vector2(-49, -112)
-autoplay = "walking"
 
 [node name="Pterosaurus" parent="Enemies" index="1" instance=ExtResource("3_xx71p")]
 speed = 80
