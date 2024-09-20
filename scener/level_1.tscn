@@ -26,6 +26,7 @@ point_count = 2
 
 [node name="Level 1" instance=ExtResource("1_xxa1l")]
 
+
 [node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
 motion_scale = Vector2(0.7, 0.7)
 
@@ -71,6 +72,7 @@ curve = SubResource("Curve2D_8nlnt")
 [node name="Pterosaurus3" parent="Enemies" index="5" instance=ExtResource("2_2vcbx")]
 position = Vector2(1103, -1388)
 curve = SubResource("Curve2D_cp7go")
+
 
 [node name="Camera2D" parent="Player" index="6"]
 offset = Vector2(0, 0)
