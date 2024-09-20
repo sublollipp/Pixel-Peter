@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceoqisagjti7f"]
+[gd_scene load_steps=12 format=3 uid="uid://ceoqisagjti7f"]
 
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_bqii6"]
 [ext_resource type="PackedScene" uid="uid://krkq8yw3n57c" path="res://scener/player.tscn" id="2_bfmd0"]
 [ext_resource type="Script" path="res://scener/coinlabel.gd" id="3_243h5"]
 [ext_resource type="Texture2D" uid="uid://tavyyt2pyxqm" path="res://assets/Tilemap/pixelpeter_tileset1.png" id="3_e2158"]
 [ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="3_l3yst"]
 [ext_resource type="PackedScene" uid="uid://deb16og8y3b4o" path="res://scener/coin.tscn" id="4_sq4lf"]
+[ext_resource type="PackedScene" uid="uid://c4x7c8bu8xq2r" path="res://scener/Pause.tscn" id="7_qa7p4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnpih"]
 texture = ExtResource("3_e2158")
@@ -367,6 +369,7 @@ physics_layer_1/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_w8ldn")
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_bqii6")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -414,5 +417,7 @@ position = Vector2(26, 29)
 [node name="Area2D" parent="CanvasLayer/coin" index="1"]
 collision_layer = 0
 collision_mask = 0
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("7_qa7p4")]
 
 [editable path="CanvasLayer/coin"]

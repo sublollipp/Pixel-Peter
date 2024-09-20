@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4x7c8bu8xq2r"]
+
+[ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="1_0xgfl"]
+[ext_resource type="Script" path="res://scripts/pauseMenu.gd" id="1_l3r2d"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+script = ExtResource("1_l3r2d")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 86.5
+offset_top = 57.0
+offset_right = 232.5
+offset_bottom = 137.0
+pivot_offset = Vector2(75, 39)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0xgfl")
+text = "Resume"
+
+[node name="MainButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0xgfl")
+text = "Main Menue"
+
+[node name="ExitButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0xgfl")
+text = "Exit"
+
+[connection signal="button_up" from="Control/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_button_up"]
+[connection signal="button_up" from="Control/MarginContainer/VBoxContainer/MainButton" to="." method="_on_main_button_button_up"]
+[connection signal="button_up" from="Control/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_button_up"]

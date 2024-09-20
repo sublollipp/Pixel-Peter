@@ -134,7 +134,8 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 		#$AnimatedSprite2D.play("flying"+str(health))
 	if event.is_action_pressed("Menu_Pause"):
 		#burde omskrives så games process og fysisk process pauses og main menu bare er et overlay således at progress ikke mistes
-		get_tree().change_scene_to_file("res://scener/main_menu.tscn")
+		#get_tree().change_scene_to_file("res://scener/main_menu.tscn")
+		pass
 	if event.is_action_pressed("MousePressed"):
 		#for at kunne teste level
 		position = get_local_mouse_position()+position
