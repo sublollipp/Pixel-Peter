@@ -24,6 +24,7 @@ func _on_resume_button_button_up():
 
 func _on_main_button_button_up():
 	# den stopper ikke med at være paused når man kommer tilbage i levelet fra main menu
+	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scener/main_menu.tscn")
 
 func _on_exit_button_button_up():
