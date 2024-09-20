@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ceoqisagjti7f"]
+[gd_scene load_steps=14 format=3 uid="uid://ceoqisagjti7f"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bqii6"]
 [ext_resource type="PackedScene" uid="uid://krkq8yw3n57c" path="res://scener/player.tscn" id="2_bfmd0"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="3_l3yst"]
 [ext_resource type="PackedScene" uid="uid://deb16og8y3b4o" path="res://scener/coin.tscn" id="4_sq4lf"]
 [ext_resource type="PackedScene" uid="uid://c4x7c8bu8xq2r" path="res://scener/Pause.tscn" id="7_qa7p4"]
+[ext_resource type="Texture2D" uid="uid://d0wckac8ucai4" path="res://assets/Sprites/exit.png" id="8_b0xmf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnpih"]
 texture = ExtResource("3_e2158")
@@ -368,6 +369,10 @@ physics_layer_0/collision_layer = 4
 physics_layer_1/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_w8ldn")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5kru5"]
+radius = 16.0
+height = 64.0
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_bqii6")
 
@@ -419,5 +424,18 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CanvasLayer2" parent="." instance=ExtResource("7_qa7p4")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Exit" type="Sprite2D" parent="."]
+texture = ExtResource("8_b0xmf")
+
+[node name="Area2D" type="Area2D" parent="Exit"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Area2D"]
+shape = SubResource("CapsuleShape2D_5kru5")
+
+[connection signal="body_entered" from="Exit/Area2D" to="." method="_on_exit_entered"]
 
 [editable path="CanvasLayer/coin"]

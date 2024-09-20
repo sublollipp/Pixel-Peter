@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://i1tasllp6hfa"]
-
-[ext_resource type="PackedScene" uid="uid://d2w1fvcxisub1" path="res://scener/level_1.tscn" id="1_cd71u"]
-
-[node name="Spil" type="Node2D"]
-
-[node name="Level 1" parent="." instance=ExtResource("1_cd71u")]
-script = null
