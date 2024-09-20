@@ -33,7 +33,7 @@ text = "Resume"
 [node name="MainButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_0xgfl")
-text = "Main Menue"
+text = "Main Menu"
 
 [node name="ExitButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
