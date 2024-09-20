@@ -37,14 +37,6 @@ func _process(delta):
 			BounceIncrement = -BounceIncrement
 		if position.y+5<=StartY:
 			BounceIncrement = -BounceIncrement
-			
-	
-		
-	
-
-
-func _on_area_2d_area_entered(area):
-	queue_free()
 	
 
 

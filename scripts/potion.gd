@@ -27,9 +27,6 @@ func _process(delta):
 		if position.y+5<=StartY:
 			BounceIncrement = -BounceIncrement
 	pass
-	
-func _on_area_2d_area_entered(area):
-	queue_free()
 
 func _on_timer_timeout():
 	bouncing = true

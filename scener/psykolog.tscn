@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqddhulnmyq1g"]
+[gd_scene load_steps=4 format=3 uid="uid://bqddhulnmyq1g"]
 
 [ext_resource type="PackedScene" uid="uid://ckkqgnj0xn5tb" path="res://scener/enemy.tscn" id="1_7jbb4"]
+[ext_resource type="AudioStream" uid="uid://bjw0fsepm45pg" path="res://sounds/step.wav" id="3_4d126"]
 [ext_resource type="Script" path="res://scripts/psykolog.gd" id="3_jcj8i"]
 
 [node name="Psykolog" instance=ExtResource("1_7jbb4")]
@@ -21,3 +22,15 @@ collide_with_areas = true
 [node name="StraightRaycast" type="RayCast2D" parent="." index="2"]
 target_position = Vector2(-9, 0)
 collision_mask = 4
+
+[node name="Timer" type="Timer" parent="." index="3"]
+wait_time = 0.531
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="4"]
+stream = ExtResource("3_4d126")
+volume_db = -2.342
+max_distance = 1000.0
+attenuation = 4.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,11 +1,24 @@
 extends CharacterBody2D
 
-@export var timeInvincible: float = 1 ## Antal sekunder Peter er uovervindelig efter han har taget skade
+@export_category("Invincibility")
+@export_custom(PROPERTY_HINT_NONE, "suffix:s") var timeInvincible: float = 1 ## Antal sekunder Peter er uovervindelig efter han har taget skade
 @export var invincible_pulse_speed: float = 10 ## Hvor hurtigt spilleren flasher hvidt, når den er invincible
 @export var running_out_pulse_speed:float = 20 ## Hvor hurtigt spilleren flasher hvid 2 sekunder inden, den bliver dødelig igen
 
+@export_category("Sound changes")
+@export_custom(PROPERTY_HINT_NONE, "suffix:db") var coin_volume: float = 0
+@export_custom(PROPERTY_HINT_NONE, "suffix:db") var hurt_volume: float = 0
+@export_custom(PROPERTY_HINT_NONE, "suffix:db") var heal_volume: float = 0
+@export_custom(PROPERTY_HINT_NONE, "suffix:db") var jump_volume: float = 0
+
 @onready var timer = $Timer
 @onready var sprite = $AnimatedSprite2D
+@onready var audioPlayer = $AudioStreamPlayer
+
+var coinSound = preload("res://sounds/pickupCoin.wav")
+var hurtSound = preload("res://sounds/hitHurt.wav")
+var jumpSound = preload("res://sounds/jump.wav")
+var healthSound = preload("res://sounds/1up.wav")
 
 # Den jump power, et hop starter på
 const startingPower: int = 120
@@ -40,7 +53,6 @@ var previousX = position.x
 var direction: float = 0
 
 var health = 3
-var died: bool = false
 
 var coinsCollected = 0
 
@@ -61,12 +73,6 @@ func _process(delta: float) -> void:
 		chargedJumpPower = clamp(chargedJumpPower + jumpChargeSpeed * delta, 0, maxJumpPower)
 
 		sprite.material.set_shader_parameter("charge", chargedJumpPower / maxJumpPower)
-
-	if health <= 0:
-		died = true
-		#midlertidig øjebliklig død
-		if died:
-			get_tree().change_scene_to_file("res://scener/game_over.tscn")
 		
 
 func _physics_process(delta: float) -> void:
@@ -138,6 +144,10 @@ func jump() -> void:
 	velocity.x = chargedDirectionPower
 	sprite.material.set_shader_parameter("charge", 0)
 	
+	audioPlayer.volume_db = jump_volume
+	audioPlayer.stream = jumpSound
+	audioPlayer.play()
+	
 	chargedDirectionPower = 0
 	chargedJumpPower = 0
 
@@ -148,20 +158,34 @@ func _on_area_2d_area_entered(area):
 	#Fuck hvor er det her konge lavet. Du har cooket max
 	if area.is_in_group("GroupEnemy"):
 		if !invincibility:
-			health -= 1
-			invincibility = true
-			timer.start()
-			sprite.material.set_shader_parameter("invincible", true)
-			$CPUParticles2D.emitting = true
+			if health <= 1:
+				get_tree().change_scene_to_file("res://scener/game_over.tscn")
+			else:
+				health -= 1
+				invincibility = true
+				timer.start()
+				sprite.material.set_shader_parameter("invincible", true)
+				$CPUParticles2D.emitting = true
+				
+				audioPlayer.volume_db = hurt_volume
+				audioPlayer.stream = hurtSound
+				audioPlayer.play()
 		
 	if area.is_in_group("GroupCoins"):
 		coinsCollected += 1
 		Globals.coinCollected()
-		print(coinsCollected)
+		area.get_parent().queue_free()
+		audioPlayer.volume_db = coin_volume
+		audioPlayer.stream = coinSound
+		audioPlayer.play()
 	
 	if area.is_in_group("GroupPotion"):
 		if health < 3:
 			health += 1
+			audioPlayer.volume_db = heal_volume
+			audioPlayer.stream = healthSound
+			audioPlayer.play()
+			area.get_parent().queue_free()
 		
 		
 	# Dette skal afspilles ved collision med enemy
