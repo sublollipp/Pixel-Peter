@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="6_n6v70"]
 [ext_resource type="Texture2D" uid="uid://tavyyt2pyxqm" path="res://assets/Tilemap/pixelpeter_tileset1.png" id="6_ot6hs"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ur5kp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00fal"]
 texture = ExtResource("6_ot6hs")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -391,9 +391,9 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_22f35"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_ur5kp")
+sources/0 = SubResource("TileSetAtlasSource_00fal")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tf42f"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13wu6"]
 texture = ExtResource("6_ot6hs")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -519,7 +519,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_4f3yy"]
 tile_size = Vector2i(32, 32)
-sources/1 = SubResource("TileSetAtlasSource_tf42f")
+sources/1 = SubResource("TileSetAtlasSource_13wu6")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tg2kw"]
 atlas = ExtResource("6_n6v70")
