@@ -376,6 +376,8 @@ sources/0 = SubResource("TileSetAtlasSource_w8ldn")
 modulate = Color(0.525101, 0.525101, 0.525101, 1)
 tile_set = SubResource("TileSet_i2pe3")
 
+[node name="Platforms" type="Node" parent="."]
+
 [node name="Potions" type="Node" parent="."]
 
 [node name="Coins" type="Node" parent="."]
