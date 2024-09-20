@@ -1,14 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8q71uvnpxdui"]
+[gd_scene load_steps=9 format=3 uid="uid://c8q71uvnpxdui"]
 
 [ext_resource type="Texture2D" uid="uid://dpkjwv4vtdpy0" path="res://assets/Sprites/enemies.png" id="1_1gt3q"]
 [ext_resource type="Script" path="res://scripts/pterosaurus.gd" id="1_q776u"]
 [ext_resource type="AudioStream" uid="uid://f5rjrxek7jtb" path="res://sounds/flap.wav" id="3_5hfk2"]
-
-[sub_resource type="Curve2D" id="Curve2D_mor3d"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 102, -65, 0, 0, 0, 0, -3, -174)
-}
-point_count = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n4h05"]
 atlas = ExtResource("1_1gt3q")
@@ -47,7 +41,6 @@ radius = 4.0
 height = 26.0
 
 [node name="Pterosaurus" type="Path2D"]
-curve = SubResource("Curve2D_mor3d")
 script = ExtResource("1_q776u")
 speed = 50
 
