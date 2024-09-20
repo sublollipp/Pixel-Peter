@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bvv8sxiek5s0l" path="res://scener/potion.tscn" id="4_te07o"]
 
 [node name="LevelElmer" instance=ExtResource("1_8sndv")]
+next_level = "res://scener/Win_screen.tscn"
 
 [node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
 motion_scale = Vector2(0.7, 0.7)
