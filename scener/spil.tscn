@@ -5,3 +5,4 @@
 [node name="Spil" type="Node2D"]
 
 [node name="Level 1" parent="." instance=ExtResource("1_cd71u")]
+script = null
