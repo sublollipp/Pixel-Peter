@@ -373,7 +373,14 @@ sources/0 = SubResource("TileSetAtlasSource_w8ldn")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Baggrund" type="TileMapLayer" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.525101, 0.525101, 0.525101, 1)
 tile_set = SubResource("TileSet_i2pe3")
+
+[node name="Potions" type="Node" parent="."]
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_bfmd0")]
 floor_max_angle = 0.532325
@@ -382,8 +389,6 @@ floor_max_angle = 0.532325
 offset = Vector2(0, -100)
 zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
-
-[node name="Enemies" type="Node" parent="."]
 
 [node name="Forgrund" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_3cafe")
