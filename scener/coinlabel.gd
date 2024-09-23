@@ -2,9 +2,13 @@ extends Label
 
 var coins: int = 0
 
-func _ready() -> void:
-	Globals.coinsUpdated.connect(updateCoinTally)
+var maxCoins: int = 0
 
-func updateCoinTally(coinsIn) -> void:
+func _ready() -> void:
+	Globals.current_level().coinsUpdated.connect(updateCoinTally)
+	text = str(coins) + "/" + str(maxCoins)
+
+func updateCoinTally(coinsIn, maxCoinsIn) -> void:
 	coins = coinsIn
-	text = str(coins)
+	maxCoins = maxCoinsIn
+	text = str(coins) + "/" + str(maxCoins)

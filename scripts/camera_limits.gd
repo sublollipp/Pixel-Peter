@@ -1,3 +1,9 @@
+# CameraLimits var et early-days system for at sætte kameraets grænser, zoom osv. på en per-level basis.
+# Vi fjernede den, da vi besluttede os for, at levelsne skulle gå opad, som de jo gør. Her ville
+# En rektangulær limit-box være dybest set ubrugelig.
+# Vi har beholdt koden her for senere reference til fremtidige projekter, men den benyttes ikke noget sted
+
+
 #CameraLimits sætter grænserne for, hvor langt op, ned og til siden, kameraet må bevæge sig i et level
 #Zoom-export variablen gør også, at vi kan ændre mængden af zoom fra level tl level
 #Dette script findes for at loade previewet af zoomet (altså den blå firkant)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ceoqisagjti7f"]
+[gd_scene load_steps=18 format=3 uid="uid://ceoqisagjti7f"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bqii6"]
 [ext_resource type="PackedScene" uid="uid://krkq8yw3n57c" path="res://scener/player.tscn" id="2_bfmd0"]
@@ -373,12 +373,151 @@ sources/0 = SubResource("TileSetAtlasSource_w8ldn")
 radius = 16.0
 height = 64.0
 
-[node name="Level" type="Node2D"]
+[sub_resource type="Animation" id="Animation_45abm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUD/HUDModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sky/SkyModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mxes8"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUD/HUDModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sky/SkyModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j1e0r"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUD/HUDModulate:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sky/SkyModulate:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_du4fx"]
+_data = {
+"RESET": SubResource("Animation_45abm"),
+"fadein": SubResource("Animation_mxes8"),
+"fadeout": SubResource("Animation_j1e0r")
+}
+
+[node name="Level" type="Node2D" groups=["Levels"]]
 script = ExtResource("1_bqii6")
 
+[node name="Sky" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="Sky"]
+show_behind_parent = true
+z_index = -100
+offset_right = 1000.0
+offset_bottom = 1000.0
+color = Color(0.2257, 0.449875, 0.61, 1)
+
+[node name="SkyModulate" type="CanvasModulate" parent="Sky"]
+color = Color(0, 0, 0, 1)
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -10
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0, 0, 0, 1)
 
 [node name="Baggrund" type="TileMapLayer" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(0.525101, 0.525101, 0.525101, 1)
@@ -401,11 +540,12 @@ zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 
 [node name="Forgrund" type="TileMapLayer" parent="."]
+z_index = 1
 tile_set = SubResource("TileSet_3cafe")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="CoinLabel" type="Label" parent="CanvasLayer"]
+[node name="CoinLabel" type="Label" parent="HUD"]
 offset_left = 40.0
 offset_top = 18.0
 offset_right = 91.0
@@ -416,16 +556,17 @@ vertical_alignment = 1
 script = ExtResource("3_243h5")
 metadata/_edit_use_anchors_ = true
 
-[node name="coin" parent="CanvasLayer" instance=ExtResource("4_sq4lf")]
+[node name="coin" parent="HUD" instance=ExtResource("4_sq4lf")]
 position = Vector2(26, 29)
 
-[node name="Area2D" parent="CanvasLayer/coin" index="1"]
+[node name="Area2D" parent="HUD/coin" index="1"]
 collision_layer = 0
 collision_mask = 0
 
-[node name="CanvasLayer2" parent="." instance=ExtResource("7_qa7p4")]
+[node name="HUDModulate" type="CanvasModulate" parent="HUD"]
+color = Color(0, 0, 0, 1)
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="PauseMenu" parent="." instance=ExtResource("7_qa7p4")]
 
 [node name="Exit" type="Sprite2D" parent="."]
 texture = ExtResource("8_b0xmf")
@@ -436,6 +577,12 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Area2D"]
 shape = SubResource("CapsuleShape2D_5kru5")
 
+[node name="CanvasAnimations" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_du4fx")
+}
+autoplay = "fadein"
+
 [connection signal="body_entered" from="Exit/Area2D" to="." method="_on_exit_entered"]
 
-[editable path="CanvasLayer/coin"]
+[editable path="HUD/coin"]

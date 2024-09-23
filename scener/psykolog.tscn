@@ -32,5 +32,6 @@ stream = ExtResource("3_4d126")
 volume_db = -2.342
 max_distance = 1000.0
 attenuation = 4.0
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

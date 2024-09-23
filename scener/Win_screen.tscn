@@ -698,7 +698,7 @@ tile_set = SubResource("TileSet_x3sia")
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(323, 182)
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAD1//z/AQAJAAAAAAD2//z/AQAJAAAAAAD2//3/AQAJAAEAAAD3//3/AQAKAAEAAAD4//3/AQALAAEAAAD4//z/AQALAAAAAAD3//z/AQAKAAAAAAD1//3/AQAJAAEAAAD2////AQAJAAAAAAD3////AQAJAAAAAAD4////AQAKAAAAAAD5////AQALAAAAAAD9//3/AQAKAAEAAAD+//3/AQALAAEAAAD///3/AQAJAAEAAAAAAP3/AQAKAAEAAAAAAP7/AQAKAAIAAAD///7/AQAJAAIAAAD+//7/AQALAAIAAAD9//7/AQAKAAIAAAD5/wAAAQAKAAAAAAD4/wAAAQAKAAAAAAD3/wAAAQAKAAAAAAD2/wAAAQAKAAAAAAABAP3/AQALAAEAAAABAP7/AQALAAIAAAA=")
+tile_map_data = PackedByteArray("AAD1//z/AQAJAAAAAAD2//z/AQAJAAAAAAD2//3/AQAJAAEAAAD3//3/AQAKAAEAAAD4//3/AQALAAEAAAD4//z/AQALAAAAAAD3//z/AQAKAAAAAAD1//3/AQAJAAEAAAD2////AQAJAAAAAAD3////AQAJAAAAAAD4////AQAKAAAAAAD5////AQALAAAAAAD9//3/AQAKAAEAAAD+//3/AQALAAEAAAD///3/AQAJAAEAAAAAAP3/AQAKAAEAAAAAAP7/AQAKAAIAAAD///7/AQAJAAIAAAD+//7/AQALAAIAAAD9//7/AQAKAAIAAAD5/wAAAQAKAAAAAAD4/wAAAQAKAAAAAAD3/wAAAQAKAAAAAAD2/wAAAQAKAAAAAAABAP3/AQALAAEAAAABAP7/AQALAAIAAAD6////AQAJAAEAAAD6/wAAAQAJAAEAAAA=")
 tile_set = SubResource("TileSet_5acds")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -722,9 +722,9 @@ text = "Du Vandt!!!"
 
 [node name="CoinLabel" type="Label" parent="Labels"]
 offset_left = -211.0
-offset_top = 151.0
+offset_top = 155.0
 offset_right = -75.0
-offset_bottom = 215.0
+offset_bottom = 219.0
 theme_override_fonts/font = ExtResource("4_kh4qh")
 theme_override_font_sizes/font_size = 48
 
@@ -743,6 +743,7 @@ horizontal_alignment = 1
 zoom = Vector2(0.5, 0.5)
 
 [node name="coin" parent="." instance=ExtResource("6_5wdfg")]
+z_index = 1
 position = Vector2(-263, 187)
 scale = Vector2(3, 3)
 

@@ -11,7 +11,7 @@ var loopCounter : int = 0
 var currentAnimation : int = 1
 
 func _ready() -> void:
-	$Labels/CoinLabel.text = str(Globals.coins)
+	$Labels/CoinLabel.text = str(Globals.coins) + "/" + str(Globals.totalCoins)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -40,13 +40,14 @@ func pulse(delta):
 		labelOpacityIncrement = -labelOpacityIncrement
 
 func _on_start_again_button_up():
-	get_tree().change_scene_to_file("res://scener/spil.tscn")
+	Globals.start_game_over()
 
 
 func _on_exit_button_button_up():
 	get_tree().quit()
 
 func _on_main_menu_button_button_up():
+	Globals.setCoins(0)
 	get_tree().change_scene_to_file("res://scener/main_menu.tscn")
 	
 func _on_animated_sprite_2d_animation_looped():

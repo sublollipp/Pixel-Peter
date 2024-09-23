@@ -9,7 +9,7 @@ extends AnimatedSprite2D
 
 var direction = 1 # 1 er højre, -1 er venstre
 
-func detectTurn() -> void:
+func detectTurn() -> void: # Detekter kant af platform eller mur og vender sig om
 	if !diaCast.is_colliding() || hCast.is_colliding():
 		direction *= -1
 

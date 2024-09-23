@@ -1,40 +1,35 @@
 extends Node2D
+class_name Level
 
 #@onready var PauseMenu = $CanvasLayer2
 
 @export_file("*.tscn") var next_level
 
+signal coinsUpdated # Sender info om level coins ud hver gang, det er relevant
+
+@onready var player = $Player
+
+var total_coins: int = 0 # Hvor mange coins der er på banen
+var coins_collected: int = 0: # Hvor mange coins på banen spilleren har samlet op
+	set(value):
+		coinsUpdated.emit(value, total_coins)
+		coins_collected = value
+
 #var paused : bool = false
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	#print("hej2")
-	pass
-	#PauseMenu.hide()
-	
+func _ready() -> void:
+	for i in get_tree().get_nodes_in_group("GroupCoins"): # Finder mængden af coins i levellet
+		total_coins += 1
+	coins_collected = 0
+	Globals.totalCoins += total_coins
 
+func exit() -> void:
+	$CanvasAnimations.play("fadeout")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-func _input(event):
-	#if event.is_action_pressed("Menu_Pause"):
-#		print("hej")
-#		pause()
-	pass
-
-func pause():
-	pass
-	#paused = !paused
-	
-	#if paused:
-	#	PauseMenu.show()
-	#	Engine.time_scale = 0
-	#if !paused:
-	#	PauseMenu.hide()
-#		Engine.time_scale = 1
-	
-
+func coinCollected() -> void: # Vi er gode programmører. Vi bruger setters.
+	coins_collected += 1
 
 func _on_exit_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file(next_level)
+	player.set_process(false)
+	player.set_physics_process(false)
+	Globals.nextLevel(next_level)

@@ -71,6 +71,7 @@ volume_db = -9.827
 pitch_scale = 1.63
 max_distance = 1000.0
 attenuation = 4.0
+bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="PathFollow2D"]
 wait_time = 1.5

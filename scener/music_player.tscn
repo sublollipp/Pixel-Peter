@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://htyiq60r25ud"]
+
+[ext_resource type="AudioStream" uid="uid://pfdemniseq8x" path="res://sounds/PixelPeter-loop.mp3" id="1_aty4e"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+volume_db = -10.0
+bus = &"Musik"
+
+[node name="LoopPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_aty4e")
+volume_db = -10.0
+bus = &"Musik"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 79.9
+one_shot = true
