@@ -9,7 +9,7 @@ signal coinsUpdated # Sender info om level coins ud hver gang, det er relevant
 
 @onready var player = $Player
 
-var total_coins: int = 0 # Hvor mange coins der er på banen
+var total_coins: int = -1 # Hvor mange coins der er på banen. Den i GUI'en skal ikke tælle med
 var coins_collected: int = 0: # Hvor mange coins på banen spilleren har samlet op
 	set(value):
 		coinsUpdated.emit(value, total_coins)

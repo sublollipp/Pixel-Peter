@@ -508,6 +508,6 @@ autoplay = "PixelP1"
 
 [connection signal="button_up" from="Buttons/Start Again" to="." method="_on_start_again_button_up"]
 [connection signal="button_up" from="Buttons/ExitButton" to="." method="_on_exit_button_button_up"]
-[connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_exit_button_button_up"]
 [connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
+[connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_exit_button_button_up"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
