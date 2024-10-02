@@ -33,7 +33,7 @@ func _on_start_game_button_button_up():
 
 #signal der activeres ved tryk på settings button
 func _on_settings_button_button_up():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scener/settings.tscn")
 	
 #signal der activeres ved tryk på exit button
 func _on_exit_button_button_up():

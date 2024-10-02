@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bsghkecgtq7tr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_wjl48"]
 [ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="6_ohye0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brlrn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0lk4j"]
 texture = ExtResource("2_ghbdf")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -132,7 +132,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_kcwmq"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_brlrn")
+sources/0 = SubResource("TileSetAtlasSource_0lk4j")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8327r"]
 texture = ExtResource("2_ghbdf")
@@ -508,6 +508,6 @@ autoplay = "PixelP1"
 
 [connection signal="button_up" from="Buttons/Start Again" to="." method="_on_start_again_button_up"]
 [connection signal="button_up" from="Buttons/ExitButton" to="." method="_on_exit_button_button_up"]
-[connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
 [connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_exit_button_button_up"]
+[connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
