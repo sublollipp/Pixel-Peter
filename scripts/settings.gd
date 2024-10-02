@@ -5,20 +5,16 @@ extends Node2D
 
 
 func _ready():
-	if AudioServer.get_bus_volume_db(1)>-40:
-		music_slider.value=AudioServer.get_bus_volume_db(1)
-	else: music_slider.value=-40
+	music_slider.value=db_to_linear(AudioServer.get_bus_volume_db(1))
+	sfx_slider.value=db_to_linear(AudioServer.get_bus_volume_db(2))
 	
-	if AudioServer.get_bus_volume_db(2)>-40:
-		sfx_slider.value=AudioServer.get_bus_volume_db(2)
-	else: sfx_slider.value=-40
 
 func _on_music_slider_value_changed(value):
-	AudioServer.set_bus_volume_db(1,value)
+	AudioServer.set_bus_volume_db(1, linear_to_db(value))
 
 
 func _on_sfx_slider_value_changed(value):
-	AudioServer.set_bus_volume_db(2,value)
+	AudioServer.set_bus_volume_db(2,linear_to_db(value))
 	
 	
 func _on_return_button_button_up():

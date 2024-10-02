@@ -162,8 +162,7 @@ offset_left = 160.0
 offset_top = 67.0
 offset_right = 464.0
 offset_bottom = 172.0
-min_value = -40.0
-max_value = 0.0
+max_value = 1.0
 step = 0.01
 
 [node name="SFXLabel" type="Label" parent="."]
@@ -180,8 +179,7 @@ offset_left = 164.0
 offset_top = 229.0
 offset_right = 466.0
 offset_bottom = 245.0
-min_value = -40.0
-max_value = 0.0
+max_value = 1.0
 step = 0.01
 
 [node name="ReturnButton" type="Button" parent="."]
