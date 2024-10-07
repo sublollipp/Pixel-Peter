@@ -66,12 +66,6 @@ point_count = 2
 [node name="Level 1" instance=ExtResource("1_xxa1l")]
 next_level = "res://scener/level_elmer.tscn"
 
-[node name="Sky" parent="." index="0"]
-visible = false
-
-[node name="ParallaxBackground" parent="." index="1"]
-visible = false
-
 [node name="ParallaxLayer" parent="ParallaxBackground" index="0"]
 motion_scale = Vector2(0.7, 0.7)
 
