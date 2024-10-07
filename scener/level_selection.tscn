@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=4 uid="uid://cr8k2t7iex42c"]
+[gd_scene load_steps=31 format=4 uid="uid://cr8k2t7iex42c"]
 
 [ext_resource type="Texture2D" uid="uid://tavyyt2pyxqm" path="res://assets/Tilemap/pixelpeter_tileset1.png" id="1_v3eu5"]
 [ext_resource type="Script" path="res://scripts/level_selection.gd" id="1_w2pr3"]
 [ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="2_n7vvj"]
 [ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="3_nlepb"]
+[ext_resource type="Texture2D" uid="uid://d0nmd08g8le60" path="res://assets/Sprites/Sprite-0001-Recovered.png" id="5_2cqx7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0moj0"]
 texture = ExtResource("1_v3eu5")
@@ -491,6 +492,11 @@ flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+
+[node name="PilTilbage" type="Sprite2D" parent="."]
+position = Vector2(-540, -298)
+scale = Vector2(1.78125, 1.78125)
+texture = ExtResource("5_2cqx7")
 
 [connection signal="button_up" from="Buttons/NormalLevel" to="." method="_on_normal_level_button_up"]
 [connection signal="button_up" from="Buttons/BossLevel" to="." method="_on_boss_level_button_up"]

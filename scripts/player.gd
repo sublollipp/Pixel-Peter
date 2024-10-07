@@ -77,6 +77,8 @@ var health = 3
 # Gemmer spillerens startposition. Kan være praktisk, hvis spillet udvides med f.eks. respawns
 var StartPos
 
+
+
 func _ready():
 	timer.wait_time = timeInvincible
 	StartPos = position
@@ -131,6 +133,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			sprite.flip_h = false
 		
+	
 	#Opdaterer previousVelocity
 	previousVelocity = velocity
 	
@@ -186,6 +189,7 @@ func _input(event: InputEvent) -> void: # Denne funktion kører, når der sker n
 func jump() -> void:
 	velocity.y = -chargedJumpPower
 	velocity.x = chargedDirectionPower
+	
 	# Shaderen der gør ens øje rødt slås fra
 	sprite.material.set_shader_parameter("charge", 0)
 	
