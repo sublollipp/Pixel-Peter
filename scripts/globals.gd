@@ -1,6 +1,6 @@
 extends Node
 
-const debug_mode = false
+const debug_mode = true
 
 var musicPercentage: int = 100
 var sfxPercentage: int = 100
