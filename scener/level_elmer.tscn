@@ -66,7 +66,7 @@ position = Vector2(752, -1000)
 [node name="potion3" parent="potions" index="2" instance=ExtResource("4_te07o")]
 position = Vector2(618, -701)
 
-[node name="Camera2D" parent="Player" index="6"]
+[node name="Camera2D" parent="Player" index="7"]
 offset = Vector2(0, -20)
 
 [node name="Forgrund" parent="." index="10"]
