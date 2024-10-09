@@ -5,6 +5,65 @@
 [node name="Level_tutorial" instance=ExtResource("1_q0uqe")]
 next_level = "res://scener/main_menu.tscn"
 
+[node name="Baggrund" parent="ParallaxBackground/ParallaxLayer" index="0"]
+modulate = Color(1, 1, 1, 1)
+
+[node name="1a" type="Label" parent="ParallaxBackground/ParallaxLayer/Baggrund" index="0"]
+visible = false
+offset_left = -124.0
+offset_top = -158.0
+offset_right = 178.0
+offset_bottom = -101.0
+text = "Press spacebar to charge a jump.
+When you let go, you will jump."
+clip_text = true
+
+[node name="1b" type="Label" parent="ParallaxBackground/ParallaxLayer/Baggrund" index="1"]
+visible = false
+offset_left = -151.0
+offset_top = -140.0
+offset_right = 151.0
+offset_bottom = -56.0
+text = "If you press “a” or “d” while charging a 
+jump you will go to the side. The longer 
+you hold it, the longer you will jump."
+clip_text = true
+
+[node name="1c" type="Label" parent="ParallaxBackground/ParallaxLayer/Baggrund" index="2"]
+offset_left = -112.0
+offset_top = -124.0
+offset_right = 112.0
+offset_bottom = -40.0
+text = "Make your way to the right."
+clip_text = true
+
+[node name="2a" type="Label" parent="ParallaxBackground/ParallaxLayer/Baggrund" index="3"]
+offset_left = 473.0
+offset_top = -195.0
+offset_right = 786.0
+offset_bottom = -120.0
+text = "If you hold in “d” for a long time, you will 
+jump extremely far. But beware, you are 
+jumping into the unknown…"
+
+[node name="3a" type="Label" parent="ParallaxBackground/ParallaxLayer/Baggrund" index="4"]
+offset_left = 1734.0
+offset_top = -295.0
+offset_right = 1878.0
+offset_bottom = -168.0
+text = "When you charge 
+the maximum 
+vertical power, 
+you will jump 
+4 blocks up. "
+
+[node name="3a2" type="Label" parent="ParallaxBackground/ParallaxLayer/Baggrund" index="5"]
+offset_left = 3290.0
+offset_top = -653.0
+offset_right = 3530.0
+offset_bottom = -526.0
+text = "Now you are now ready to play"
+
 [node name="Camera2D" parent="Player" index="6"]
 offset = Vector2(0, -50)
 
