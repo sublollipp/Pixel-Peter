@@ -10,6 +10,8 @@ var color_white
 var loopCounter : int = 0
 var currentAnimation : int = 1
 
+func _ready():
+	Globals.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pulse(1)

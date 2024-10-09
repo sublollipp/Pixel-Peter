@@ -16,6 +16,8 @@ var transitionMaker = preload("res://scener/transitionmaker.tscn")
 const startMusic = preload("res://sounds/PixelPeter-full.mp3")
 const loopMusic = preload("res://sounds/PixelPeter-loop.mp3")
 
+var easyMode: bool = false
+
 func _ready() -> void:
 	add_child(musicPlayer.instantiate())
 	add_child(transitionMaker.instantiate())
@@ -41,6 +43,9 @@ func play() -> void:
 func stop() -> void:
 	musicPlayer.stop()
 	musicPlayer.get_node("LoopPlayer").stop()
+	
+func _process(delta):
+	print(easyMode)
 
 var totalCoins = 0
 
