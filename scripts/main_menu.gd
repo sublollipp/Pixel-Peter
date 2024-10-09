@@ -29,7 +29,7 @@ func _process(delta):
 func _on_start_game_button_button_up():
 	Engine.time_scale=1
 	Globals.play()
-	Globals.nextLevel("res://scener/level_selection.tscn")
+	get_tree().change_scene_to_file("res://scener/level_selection.tscn")
 
 #signal der activeres ved tryk på settings button
 func _on_settings_button_button_up():
