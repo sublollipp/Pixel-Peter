@@ -82,6 +82,7 @@ var StartPos
 func _ready():
 	timer.wait_time = timeInvincible
 	StartPos = position
+	sprite.material.set_shader_parameter("invincible", false)
 	
 func _process(delta: float) -> void:
 	if invincibility:

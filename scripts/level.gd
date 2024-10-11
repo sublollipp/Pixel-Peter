@@ -34,7 +34,6 @@ func coinCollected() -> void: # Vi er gode programmører. Vi bruger setters.
 	coins_collected += 1
 
 func _on_exit_entered(body: Node2D) -> void:
-	
 	player.set_process(false)
 	player.set_physics_process(false)
-	Globals.nextLevel("res://scener/main_menu.tscn")
+	Globals.nextLevel(next_level)

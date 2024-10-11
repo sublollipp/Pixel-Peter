@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_5paep"]
 [ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="2_8eg68"]
 
-[node name="Settings" type="Node2D"]
+[node name="Settings" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_5paep")
 
 [node name="MusicLabel" type="Label" parent="."]
@@ -70,12 +71,15 @@ Mode"
 
 [node name="Sky" type="CanvasLayer" parent="."]
 layer = -100
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Sky"]
 show_behind_parent = true
 z_index = -100
-offset_right = 1000.0
-offset_bottom = 1000.0
+offset_left = -10.0
+offset_top = -13.0
+offset_right = 990.0
+offset_bottom = 987.0
 color = Color(0.2257, 0.449875, 0.61, 1)
 
 [node name="SkyModulate" type="CanvasModulate" parent="Sky"]

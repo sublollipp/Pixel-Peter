@@ -4,16 +4,19 @@ extends Node2D
 
 func _on_normal_level_button_up():
 	Globals.nextLevel("res://scener/level_easy.tscn")
+	Globals.startNewRun("res://scener/level_easy.tscn", "Normal")
 
 
 
 func _on_boss_level_button_up():
 	Globals.nextLevel("res://scener/level_elmer.tscn")
+	Globals.startNewRun("res://scener/level_elmer.tscn", "Boss")
 
 
 
 func _on_turtorial_level_button_up():
 	Globals.nextLevel("res://scener/level_tutorial.tscn")
+	Globals.startNewRun("res://scener/level_tutorial.tscn", "Tutorial")
 
 
 

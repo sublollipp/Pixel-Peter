@@ -739,6 +739,21 @@ theme_override_font_sizes/font_size = 16
 text = "Tryk på en knap for at gå til hovedmenuen"
 horizontal_alignment = 1
 
+[node name="RuntimeLabel" type="Label" parent="Labels"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -494.0
+offset_top = 2.0
+offset_right = -198.0
+offset_bottom = 100.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_kh4qh")
+theme_override_font_sizes/font_size = 32
+text = "Timer/err"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 

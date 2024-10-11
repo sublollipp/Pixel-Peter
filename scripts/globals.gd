@@ -1,17 +1,18 @@
 extends Node
 
-const debug_mode = true
+const debug_mode = false
 
 var musicPercentage: int = 100
 var sfxPercentage: int = 100
 var mainPercentage: int = 100
 
-const firstLevel := "res://scener/level_easy.tscn"
+var firstLevel := "res://scener/level_easy.tscn"
 
 var musicPlaying: bool = false
 
 var musicPlayer = preload("res://scener/music_player.tscn")
 var transitionMaker = preload("res://scener/transitionmaker.tscn")
+var runTimer = preload("res://scener/run.tscn")
 
 const startMusic = preload("res://sounds/PixelPeter-full.mp3")
 const loopMusic = preload("res://sounds/PixelPeter-loop.mp3")
@@ -21,10 +22,12 @@ var easyMode: bool = false
 func _ready() -> void:
 	add_child(musicPlayer.instantiate())
 	add_child(transitionMaker.instantiate())
+	add_child(runTimer.instantiate())
 	musicPlayer = get_node("MusicPlayer") # Hvem bekymrer sig også om type safety??
 	transitionMaker = get_node("Transitionmaker") # Ja, hvem bekymrer sig også om type safety??
+	runTimer = get_node("Run")
 	musicPlayer.stream = startMusic
-	musicPlayer.get_node("Timer").timeout.connect(startLooping)
+	musicPlayer.finished.connect(startLooping)
 
 func startLooping() -> void:
 	musicPlayer.stop()
@@ -38,14 +41,14 @@ func enter() -> void: # Kører fade-ind animationen når man går ind i et level
 
 func play() -> void:
 	musicPlayer.play()
-	musicPlayer.get_node("Timer").start()
 
 func stop() -> void:
 	musicPlayer.stop()
 	musicPlayer.get_node("LoopPlayer").stop()
 	
 func _process(delta):
-	print(easyMode)
+	if easyMode:
+		runTimer.wentEasy()
 
 var totalCoins = 0
 
@@ -73,3 +76,18 @@ func start_game_over() -> void:
 	exit()
 	get_tree().change_scene_to_file(firstLevel)
 	enter()
+	startNewRun(firstLevel, runTimer.runName)
+
+func startNewRun(firstLevelPath: String, runAlias: String) -> void:
+	firstLevel = firstLevelPath
+	runTimer.runName = runAlias
+	runTimer.reset()
+
+func runTime() -> String:
+	return runTimer.timeToString()
+
+func runName() -> String:
+	return runTimer.runName
+
+func cheated() -> bool:
+	return runTimer.wasEasyMode

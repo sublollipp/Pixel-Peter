@@ -21,8 +21,15 @@ func _draw() -> void:
 		draw_circle(get_point_position(i), 2, Color.WHITE)
 
 func _physics_process(delta: float) -> void:
-	if get_parent().charging:
-		make_points()
+	if Globals.easyMode == false:
+		if points.size() == 0:
+			return
+		else:
+			clear_points()
+			queue_redraw()
 	else:
-		clear_points()
-		queue_redraw()
+		if get_parent().charging:
+			make_points()
+		else:
+			clear_points()
+			queue_redraw()

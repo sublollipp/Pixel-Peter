@@ -12,6 +12,11 @@ var currentAnimation : int = 1
 
 func _ready() -> void:
 	$Labels/CoinLabel.text = str(Globals.coins) + "/" + str(Globals.totalCoins)
+	var timerText = Globals.runName() + " "
+	if Globals.cheated():
+		timerText += "(easy) "
+	timerText += Globals.runTime()
+	$Labels/RuntimeLabel.text = timerText
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
