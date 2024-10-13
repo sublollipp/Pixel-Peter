@@ -18,8 +18,8 @@ func timeToString() -> String:
 	var hours: String = str(h)
 	var minutes: String = str(m - h * 60) # Timerne skal ikke tælles med to gange, så de trækkes her fra
 	var seconds: String = str(snapped(time - m * 60, 0.01)) # Snapped afrunder
-	if seconds.length() < 4:
-		seconds = "0" + seconds
+	if seconds.length() < 5:
+		seconds = "0" + seconds # Så der står f.eks. 2:30:04.43 i stedet for 2:30:4.43. Ser lidt bedre ud.
 	if minutes.length() < 2:
 		minutes = "0" + minutes
 	return(hours + ":" + minutes + ":" + seconds)
