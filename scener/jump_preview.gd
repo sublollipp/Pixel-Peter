@@ -1,6 +1,6 @@
 extends Line2D
 
-var stopline = true
+const stopline = true # Til potentiel fremtidig ændring. Lige nu bliver den dog som den er.
 
 @onready var playercolmask = get_parent().collision_mask
 @export_custom(PROPERTY_HINT_LAYERS_2D_PHYSICS, "") var collision_mask = PROPERTY_HINT_LAYERS_2D_PHYSICS
@@ -40,7 +40,7 @@ func _draw() -> void:
 func _physics_process(delta: float) -> void:
 	globalpos = get_global_position()
 	space_state = get_world_2d().direct_space_state
-	if get_parent().charging:
+	if get_parent().charging and Globals.easyMode:
 		make_points()
 	else:
 		clear_points()
