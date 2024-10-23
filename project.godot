@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="PixelPeter"
+config/name="Pixel Peter"
+config/name_localized={
+"es": "Pixel Pedro"
+}
 run/main_scene="res://scener/Start_Screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/Icons/pixelpeter_icon 256p.png"
+config/windows_native_icon="res://assets/Icons/pixelpeter_icon.ico"
 
 [autoload]
 
@@ -23,6 +27,7 @@ Globals="*res://scripts/globals.gd"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/mode=2
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"

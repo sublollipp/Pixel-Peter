@@ -450,7 +450,7 @@ offset_right = -61.0
 offset_bottom = -74.0
 theme_override_fonts/font = ExtResource("2_n7vvj")
 theme_override_font_sizes/font_size = 24
-text = "Start Game"
+text = "Normal"
 flat = true
 
 [node name="BossLevel" type="Button" parent="Buttons"]

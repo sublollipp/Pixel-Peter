@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_a8y3o"]
 [ext_resource type="Shader" path="res://shaders/petershader.gdshader" id="2_7w0dg"]
 [ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="2_wqpt1"]
-[ext_resource type="Script" path="res://scener/jump_preview.gd" id="4_1n73k"]
+[ext_resource type="Script" path="res://scripts/jump_preview.gd" id="4_1n73k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gvcpj"]
 radius = 9.0

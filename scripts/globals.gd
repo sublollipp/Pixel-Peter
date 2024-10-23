@@ -2,6 +2,8 @@ extends Node
 
 const debug_mode = false
 
+var save_data: SaveData
+
 var musicPercentage: int = 100
 var sfxPercentage: int = 100
 var mainPercentage: int = 100
@@ -28,6 +30,7 @@ func _ready() -> void:
 	runTimer = get_node("Run")
 	musicPlayer.stream = startMusic
 	musicPlayer.finished.connect(startLooping)
+	save_data = SaveData.load_or_create()
 
 func startLooping() -> void:
 	musicPlayer.stop()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bqii6"]
 [ext_resource type="PackedScene" uid="uid://krkq8yw3n57c" path="res://scener/player.tscn" id="2_bfmd0"]
-[ext_resource type="Script" path="res://scener/coinlabel.gd" id="3_243h5"]
+[ext_resource type="Script" path="res://scripts/coinlabel.gd" id="3_243h5"]
 [ext_resource type="Texture2D" uid="uid://tavyyt2pyxqm" path="res://assets/Tilemap/pixelpeter_tileset1.png" id="3_e2158"]
 [ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="3_l3yst"]
 [ext_resource type="PackedScene" uid="uid://deb16og8y3b4o" path="res://scener/coin.tscn" id="4_sq4lf"]
