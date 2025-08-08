@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://bih2opxeexv1t"]
 
-[ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_de7k5"]
+[ext_resource type="Script" uid="uid://smbecobmugj2" path="res://scripts/win_screen.gd" id="1_de7k5"]
 [ext_resource type="Texture2D" uid="uid://tavyyt2pyxqm" path="res://assets/Tilemap/pixelpeter_tileset1.png" id="2_1n0uf"]
 [ext_resource type="Texture2D" uid="uid://hcy630pb8qf1" path="res://assets/Sprites/pixelpeter.png" id="3_j1rfl"]
 [ext_resource type="FontFile" uid="uid://bsghkecgtq7tr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_kh4qh"]

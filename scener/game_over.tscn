@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=4 uid="uid://bwk66xhmwtp5i"]
 
-[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_ltn6o"]
+[ext_resource type="Script" uid="uid://dw0id1vigxyi6" path="res://scripts/game_over.gd" id="1_ltn6o"]
 [ext_resource type="Texture2D" uid="uid://tavyyt2pyxqm" path="res://assets/Tilemap/pixelpeter_tileset1.png" id="2_ghbdf"]
 [ext_resource type="FontFile" uid="uid://dxtdecpe7lq7k" path="res://assets/fonts/PixelOperator8.ttf" id="3_6esi5"]
 [ext_resource type="FontFile" uid="uid://bsghkecgtq7tr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_wjl48"]
@@ -509,5 +509,4 @@ autoplay = "PixelP1"
 [connection signal="button_up" from="Buttons/Start Again" to="." method="_on_start_again_button_up"]
 [connection signal="button_up" from="Buttons/ExitButton" to="." method="_on_exit_button_button_up"]
 [connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
-[connection signal="button_up" from="Buttons/MainMenuButton" to="." method="_on_exit_button_button_up"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

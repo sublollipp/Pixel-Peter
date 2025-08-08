@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://c0hufydxslqgn"]
 
 [ext_resource type="PackedScene" uid="uid://ceoqisagjti7f" path="res://scener/level.tscn" id="1_q0uqe"]
-[ext_resource type="Script" path="res://scener/level_tutorial.gd" id="2_gxk50"]
+[ext_resource type="Script" uid="uid://djbun6a7qrkkq" path="res://scener/level_tutorial.gd" id="2_gxk50"]
 [ext_resource type="FontFile" uid="uid://bsghkecgtq7tr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_fx413"]
 
 [node name="Level_tutorial" instance=ExtResource("1_q0uqe")]

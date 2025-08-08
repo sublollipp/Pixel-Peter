@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Filen med spillets Discord app-id i, samt funktionerne for setting af rich presence detaljer.
+scripts/discord_richpresence.gd
+scripts/discord_richpresence.gd.uid

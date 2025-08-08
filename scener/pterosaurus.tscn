@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c8q71uvnpxdui"]
 
 [ext_resource type="Texture2D" uid="uid://dpkjwv4vtdpy0" path="res://assets/Sprites/enemies.png" id="1_1gt3q"]
-[ext_resource type="Script" path="res://scripts/pterosaurus.gd" id="1_q776u"]
+[ext_resource type="Script" uid="uid://bjwctdsvt3eo8" path="res://scripts/pterosaurus.gd" id="1_q776u"]
 [ext_resource type="AudioStream" uid="uid://f5rjrxek7jtb" path="res://sounds/flap.wav" id="3_5hfk2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n4h05"]

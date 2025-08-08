@@ -17,6 +17,7 @@ func _ready() -> void:
 		timerText += "(easy) "
 	timerText += Globals.runTime()
 	$Labels/RuntimeLabel.text = timerText
+	DiscordRichpresence.updateState("On win screen")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

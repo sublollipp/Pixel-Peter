@@ -11,7 +11,8 @@ var currentAnimation : int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animated_sprite_2d.flip_h
-	
+	DiscordRPC.state = ""
+	DiscordRichpresence.updateState("In Main Menu")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

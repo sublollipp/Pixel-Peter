@@ -47,9 +47,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8fsrg"]
 _data = {
-"Enter": SubResource("Animation_wes7b"),
-"Exit": SubResource("Animation_r4h3s"),
-"RESET": SubResource("Animation_nbp0b")
+&"Enter": SubResource("Animation_wes7b"),
+&"Exit": SubResource("Animation_r4h3s"),
+&"RESET": SubResource("Animation_nbp0b")
 }
 
 [node name="Transitionmaker" type="CanvasModulate"]

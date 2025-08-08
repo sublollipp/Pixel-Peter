@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ckkqgnj0xn5tb" path="res://scener/enemy.tscn" id="1_7jbb4"]
 [ext_resource type="AudioStream" uid="uid://bjw0fsepm45pg" path="res://sounds/step.wav" id="3_4d126"]
-[ext_resource type="Script" path="res://scripts/psykolog.gd" id="3_jcj8i"]
+[ext_resource type="Script" uid="uid://dm5f83ht4ykmi" path="res://scripts/psykolog.gd" id="3_jcj8i"]
 
 [node name="Psykolog" instance=ExtResource("1_7jbb4")]
 scale = Vector2(1, 1)

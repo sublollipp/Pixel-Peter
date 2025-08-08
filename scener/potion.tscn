@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bvv8sxiek5s0l"]
 
-[ext_resource type="Script" path="res://scripts/potion.gd" id="1_jqtm1"]
+[ext_resource type="Script" uid="uid://13841ykxj86b" path="res://scripts/potion.gd" id="1_jqtm1"]
 [ext_resource type="Texture2D" uid="uid://bljr7331p4a2m" path="res://assets/Sprites/items.png" id="2_awaen"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5vmo"]

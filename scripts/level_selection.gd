@@ -1,23 +1,24 @@
 extends Node2D
 
-
+func _ready() -> void:
+	DiscordRichpresence.updateState("Selecting a Level")
 
 func _on_normal_level_button_up():
+	DiscordRichpresence.updateState("In a Normal Run")
 	Globals.nextLevel("res://scener/level_easy.tscn")
 	Globals.startNewRun("res://scener/level_easy.tscn", "Normal")
 
 
 
 func _on_boss_level_button_up():
+	DiscordRichpresence.updateState("In the Boss Level")
 	Globals.nextLevel("res://scener/level_elmer.tscn")
 	Globals.startNewRun("res://scener/level_elmer.tscn", "Boss")
 
-
-
 func _on_turtorial_level_button_up():
+	DiscordRichpresence.updateState("In the Tutorial Level")
 	Globals.nextLevel("res://scener/level_tutorial.tscn")
 	Globals.startNewRun("res://scener/level_tutorial.tscn", "Tutorial")
-
 
 
 func _on_return_button_up():

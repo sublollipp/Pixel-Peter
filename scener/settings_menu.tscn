@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://c0sa67uwn7gds"]
 
 [ext_resource type="Texture2D" uid="uid://tavyyt2pyxqm" path="res://assets/Tilemap/pixelpeter_tileset1.png" id="1_0jr4s"]
-[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_41dte"]
+[ext_resource type="Script" uid="uid://vfelekpke3rb" path="res://scripts/settings_menu.gd" id="1_41dte"]
 [ext_resource type="FontFile" uid="uid://bsghkecgtq7tr" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_mtopl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckuwb"]

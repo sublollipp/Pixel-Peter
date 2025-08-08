@@ -15,17 +15,19 @@ config/name_localized={
 "es": "Pixel Pedro"
 }
 run/main_scene="res://scener/Start_Screen.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.281187, 0.281187, 0.281187, 1)
-boot_splash/image="res://assets/Icons/pixelpeter_icon_320p.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+boot_splash/image="res://assets/Icons/pixelpeter_icon_320p.png"
 config/icon="res://assets/Icons/pixelpeter_icon 256p.png"
 config/windows_native_icon="res://assets/Icons/pixelpeter_icon.ico"
 
 [autoload]
 
 Globals="*res://scripts/globals.gd"
+DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+DiscordRichpresence="*res://scripts/discord_richpresence.gd"
 
 [display]
 
@@ -35,6 +37,10 @@ window/size/mode=2
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
 
 [global_group]
 
