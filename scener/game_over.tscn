@@ -461,6 +461,7 @@ text = "Start Again"
 flat = true
 
 [node name="ExitButton" type="Button" parent="Buttons"]
+unique_name_in_owner = true
 offset_left = 133.0
 offset_top = -8.0
 offset_right = 388.0

@@ -14,6 +14,7 @@ config/name="Pixel Peter"
 config/name_localized={
 "es": "Pixel Pedro"
 }
+config/version="1.2.1"
 run/main_scene="res://scener/Start_Screen.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.281187, 0.281187, 0.281187, 1)

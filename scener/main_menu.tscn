@@ -473,6 +473,7 @@ text = "Settings"
 flat = true
 
 [node name="ExitButton" type="Button" parent="Buttons"]
+unique_name_in_owner = true
 offset_left = 132.0
 offset_top = -10.0
 offset_right = 386.0
