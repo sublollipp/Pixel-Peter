@@ -10,6 +10,10 @@ var loopCounter : int = 0
 var currentAnimation : int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Reset coins
+	Globals.totalCoins = 0
+	Globals.setCoins(0)
+	
 	animated_sprite_2d.flip_h
 	DiscordRichpresence.updateCoins(0, 0)
 	DiscordRichpresence.updateState("In Main Menu")
